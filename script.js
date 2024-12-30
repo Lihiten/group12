@@ -1,5 +1,4 @@
 // ברכה למשתמש בדף הבית
-//היייייייייייייייי
 document.addEventListener("DOMContentLoaded", function() {
     const greeting = document.createElement("p");
     greeting.textContent = "ברוכים הבאים ל-Cook Master!";

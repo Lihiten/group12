@@ -1,15 +1,15 @@
-/* General Styles */
+/* רקע כללי */
 body {
     font-family: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
-    background-color: #fff5cd;
+    background-color: #fff5cd; /* רקע שמנת */
     color: #333;
 }
 
 /* Header */
 header {
-    background-color: #a44a14;
+    background-color: #a44a14; /* חמרה */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,52 +37,25 @@ header nav ul li a {
     font-weight: bold;
 }
 
-/* Workshops Page */
-.workshops-title {
-    text-align: center;
-    color: #a44a14;
-    margin: 20px 0;
-}
-
-.workshops-container {
+/* Left Section */
+.left-section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
-    margin: 20px;
 }
 
-.workshop-card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.workshop-card:hover {
-    transform: scale(1.05);
-}
-
-.workshop-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-}
-
-.workshop-card h2 {
-    color: #a44a14;
-    margin: 10px 0;
+.left-section .side-logo {
+    width: 350px; /* גודל הלוגו */
+    height: auto;
 }
 
 .button {
     display: inline-block;
-    margin: 10px 0;
+        margin: 10px 0 10px 50px; /* הוספת מרווח משמאל */
+
     padding: 10px 15px;
-    background-color: #a44a14;
+    background-color: #a44a14; /* חמרה */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -91,17 +64,41 @@ header nav ul li a {
 }
 
 .button:hover {
-    background-color: #d65b1f;
-    transform: scale(1.1);
+    background-color: #d65b1f; /* חמרה כהה יותר */
+    transform: scale(1.1); /* הגדלה */
+}
+
+/* Right Sidebar with Two Columns */
+.right-sidebar {
+    position: fixed;
+    top: 100px; /* מרווח מהחלק העליון */
+    right: 20px; /* מרווח מהקצה הימני */
+    display: flex;
+    gap: 20px; /* מרווח בין הטורים */
+}
+
+.image-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* מרווח בין התמונות */
+}
+
+.sidebar-image {
+    width: 120px; /* גודל התמונות */
+    height: 120px;
+    object-fit: cover;
+    background-color: white; /* רקע לבן */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה */
 }
 
 /* Footer */
 footer {
-    background-color: #a44a14;
+    background-color: #a44a14; /* חמרה */
     color: white;
     text-align: center;
     padding: 10px;
-    position: relative;
+    position: fixed; /* צמוד לתחתית */
     bottom: 0;
     width: 100%;
 }
