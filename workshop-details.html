@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop Details</title>
+    <title>Cook Master - Workshop Details</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="images/logo.png" alt="Cook Master Logo">
+            <img src="images/logo.jpg" alt="Cook Master Logo">
         </div>
         <nav>
             <ul>
@@ -24,28 +24,49 @@
 
     <!-- Main Content -->
     <main>
-        <h1>Workshop Details</h1>
-        <form>
-            <label for="date">Choose a Date:</label>
-            <input type="date" id="date" required>
-
-            <label for="time">Choose a Time:</label>
-            <select id="time">
-                <option>10:00 AM</option>
-                <option>1:00 PM</option>
-                <option>5:00 PM</option>
-            </select>
-
-            <label for="participants">Number of Participants:</label>
-            <input type="number" id="participants" min="1" max="10" required>
-
-            <button type="submit" class="button">Register</button>
-        </form>
+        <!-- The content will be loaded dynamically -->
+        <section id="workshop-details"></section>
     </main>
+
+    <form id="registration-form">
+    <label for="date">Choose a Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Choose a Time:</label>
+    <select id="time" name="time">
+        <option>10:00 AM</option>
+        <option>1:00 PM</option>
+        <option>5:00 PM</option>
+    </select>
+
+    <label for="participants">Number of Participants:</label>
+    <input type="number" id="participants" name="participants" min="1" max="10" required>
+
+    <button type="submit" class="button">Register</button>
+</form>
+
+<script>
+    document.getElementById("registration-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // מונע את שליחת הטופס הרגילה
+        const params = new URLSearchParams();
+
+        // אוספים את הנתונים מהטופס
+        params.append("date", document.getElementById("date").value);
+        params.append("time", document.getElementById("time").value);
+        params.append("participants", document.getElementById("participants").value);
+        params.append("workshop", "Italian Cooking Workshop"); // שינוי לסדנה הדינאמית
+
+        // מעבר לעמוד הסיכום עם הנתונים
+        window.location.href = `summary.html?${params.toString()}`;
+    });
+</script>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Cook Master. All rights reserved.</p>
     </footer>
+
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

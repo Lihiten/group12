@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Cook Master Logo">
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Your first step to become a chef is done!</h1>
+        <section id="summary-details" class="summary-section"></section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Cook Master. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+
+            // קבלת הנתונים מה-URL
+            const workshop = params.get("workshop");
+            const date = params.get("date");
+            const time = params.get("time");
+            const participants = params.get("participants");
+
+            // הצגת הנתונים בעמוד
+            const summarySection = document.getElementById("summary-details");
+            summarySection.innerHTML = `
+                <p><strong>Workshop:</strong> ${workshop}</p>
+                <p><strong>Date:</strong> ${date}</p>
+                <p><strong>Time:</strong> ${time}</p>
+                <p><strong>Number of Participants:</strong> ${participants}</p>
+            `;
+        });
+    </script>
+
+</body>
+</html>
