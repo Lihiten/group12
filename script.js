@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+// ברכה למשתמש בדף הבית
+document.addEventListener("DOMContentLoaded", function() {
+    const greeting = document.createElement("p");
+    greeting.textContent = "ברוכים הבאים ל-Cook Master!";
+    document.querySelector("main").appendChild(greeting);
+});
+
+// ולידציה בסיסית לטופס צור קשר
+document.querySelector("form")?.addEventListener("submit", function(event) {
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    if (!email.includes("@")) {
+        alert("אנא הזן דוא\"ל חוקי.");
+        event.preventDefault();
+    }
+
+    if (message.trim() === "") {
+        alert("אנא מלא את שדה ההודעה.");
+        event.preventDefault();
+    }
+});
+=======
 // ברכה למשתמש בדף הבית
 document.addEventListener("DOMContentLoaded", function() {
     const greeting = document.createElement("p");
@@ -129,3 +153,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+>>>>>>> c242babb6103c8fb6a52007c4d27a8ffd028f1f0
