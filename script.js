@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // ברכה למשתמש בדף הבית
 document.addEventListener("DOMContentLoaded", function() {
     const greeting = document.createElement("p");
@@ -21,7 +21,7 @@ document.querySelector("form")?.addEventListener("submit", function(event) {
         event.preventDefault();
     }
 });
-=======
+
 // ברכה למשתמש בדף הבית
 document.addEventListener("DOMContentLoaded", function() {
     const greeting = document.createElement("p");
@@ -153,4 +153,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
->>>>>>> c242babb6103c8fb6a52007c4d27a8ffd028f1f0
+
