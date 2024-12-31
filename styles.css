@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* רקע כללי */
 body {
     font-family: 'Playfair Display', serif;
@@ -103,7 +103,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
-=======
+
 /* General Styles */
 body {
     font-family: 'Playfair Display', serif;
@@ -307,6 +307,7 @@ footer {
     transform: scale(1.05);
 }
 
+
 /* Workshop Header Section */
 .workshop-header {
     text-align: center; /* ממקם את הכותרת והתיאור במרכז */
@@ -386,6 +387,28 @@ footer {
     line-height: 1.5;
 }
 
+/* כל האתר */
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* כותרות */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight: bold;
+}
+
+/* פסקאות */
+p {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* כפתורים, טפסים */
+button, input, select, textarea {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
 
 
->>>>>>> c242babb6103c8fb6a52007c4d27a8ffd028f1f0
+

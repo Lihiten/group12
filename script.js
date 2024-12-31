@@ -1,10 +1,13 @@
-<<<<<<< HEAD
+
 // ברכה למשתמש בדף הבית
 document.addEventListener("DOMContentLoaded", function() {
-    const greeting = document.createElement("p");
-    greeting.textContent = "ברוכים הבאים ל-Cook Master!";
-    document.querySelector("main").appendChild(greeting);
+    if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
+        const greeting = document.createElement("p");
+        greeting.textContent = "Welcome to Cook Master!";
+        document.querySelector("main").appendChild(greeting);
+    }
 });
+
 
 // ולידציה בסיסית לטופס צור קשר
 document.querySelector("form")?.addEventListener("submit", function(event) {
@@ -21,13 +24,7 @@ document.querySelector("form")?.addEventListener("submit", function(event) {
         event.preventDefault();
     }
 });
-=======
-// ברכה למשתמש בדף הבית
-document.addEventListener("DOMContentLoaded", function() {
-    const greeting = document.createElement("p");
-    greeting.textContent = "Welcome to Cook Master!";
-    document.querySelector("main").appendChild(greeting);
-});
+
 
 // ולידציה בסיסית לטופס צור קשר
 document.querySelector("form")?.addEventListener("submit", function(event) {
@@ -102,11 +99,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // מציאת המידע על הסדנה שנבחרה
     const workshop = workshops[type];
-
     const detailsContainer = document.getElementById("workshop-details");
 
     if (workshop) {
-        // יצירת תוכן דינאמי
         detailsContainer.innerHTML = `
             <section class="workshop-header">
                 <h1>${workshop.title}</h1>
@@ -133,24 +128,36 @@ document.addEventListener("DOMContentLoaded", function () {
             </section>
         `;
 
-        // הוספת מאזין אירועים לטופס
+        // הגבלת תאריכים
+        const dateInput = document.getElementById("date");
+        if (dateInput) {
+            const today = new Date();
+            const minDate = today.toISOString().split("T")[0]; // תאריך מינימלי
+            dateInput.setAttribute("min", minDate);
+
+            const maxDate = new Date();
+            maxDate.setMonth(maxDate.getMonth() + 2); // חודשיים קדימה
+            const maxDateStr = maxDate.toISOString().split("T")[0]; // תאריך מקסימלי
+            dateInput.setAttribute("max", maxDateStr);
+        }
+
+        // מאזין לטופס
         const form = document.getElementById("registration-form");
-        form.addEventListener("submit", function(event) {
-            event.preventDefault(); // מונע שליחה רגילה
-            const params = new URLSearchParams();
+        if (form) {
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                const params = new URLSearchParams();
 
-            // איסוף נתוני הטופס
-            params.append("date", document.getElementById("date").value);
-            params.append("time", document.getElementById("time").value);
-            params.append("participants", document.getElementById("participants").value);
-            params.append("workshop", workshop.title);
+                params.append("date", document.getElementById("date").value);
+                params.append("time", document.getElementById("time").value);
+                params.append("participants", document.getElementById("participants").value);
+                params.append("workshop", workshop.title);
 
-            // מעבר לעמוד הסיכום
-            window.location.href = `summary.html?${params.toString()}`;
-        });
+                window.location.href = `summary.html?${params.toString()}`;
+            });
+        }
     } else {
         detailsContainer.innerHTML = `<h1>Workshop not found</h1>`;
     }
 });
 
->>>>>>> c242babb6103c8fb6a52007c4d27a8ffd028f1f0
