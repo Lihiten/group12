@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* רקע כללי */
 body {
     font-family: 'Playfair Display', serif;
@@ -102,3 +103,289 @@ footer {
     bottom: 0;
     width: 100%;
 }
+=======
+/* General Styles */
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff5cd;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #a44a14;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Workshops Page */
+.workshops-title {
+    text-align: center;
+    color: #a44a14;
+    margin: 20px 0;
+}
+
+.workshops-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.workshop-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.workshop-card:hover {
+    transform: scale(1.05);
+}
+
+.workshop-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.workshop-card h2 {
+    color: #a44a14;
+    margin: 10px 0;
+}
+
+.button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #a44a14;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #d65b1f;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #a44a14;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Menu Section */
+.menu-section {
+    margin: 20px auto; /* ריווח סביב התפריט */
+    padding: 20px; /* ריווח פנימי */
+    background-color: #fff5cd; /* צבע רקע נעים */
+    border: 2px solid #a44a14; /* גבול בצבע תואם */
+    border-radius: 12px; /* פינות מעוגלות */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צל ליצירת עומק */
+    max-width: 600px; /* מגביל את הרוחב */
+    text-align: center; /* ממרכז את התוכן */
+}
+
+.menu-section h2 {
+    font-family: 'Noto Serif', serif; /* פונטים אלגנטיים לכותרת */
+    color: #a44a14; /* צבע הכותרת */
+    font-size: 24px; /* גודל טקסט */
+    margin-bottom: 15px; /* ריווח מתחת לכותרת */
+}
+
+.menu-section ul {
+    list-style: none; /* הסרת עיגולי רשימה */
+    padding: 0; /* ביטול ריווח פנימי */
+    margin: 0; /* ביטול ריווח חיצוני */
+}
+
+.menu-section ul li {
+    font-family: 'Noto Serif', serif; /* פונטים אלגנטיים */
+    font-size: 18px; /* גודל טקסט מתאים */
+    color: #333; /* צבע הטקסט */
+    margin: 10px 0; /* ריווח בין הפריטים */
+    padding: 5px; /* ריווח פנימי */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* אפקט מעבר */
+}
+
+.menu-section ul li:hover {
+    background-color: #d65b1f; /* שינוי צבע בריחוף */
+    color: white; /* שינוי צבע טקסט */
+    transform: scale(1.05); /* הגדלה קלה */
+    border-radius: 8px; /* פינות מעוגלות גם בריחוף */
+}
+
+
+/* Registration Form Section */
+.registration-section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff5cd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.registration-section h2 {
+    text-align: center;
+    color: #a44a14;
+    font-size: 24px;
+}
+
+.registration-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registration-section label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.registration-section input,
+.registration-section select {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.registration-section button {
+    background-color: #a44a14;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.registration-section button:hover {
+    background-color: #d65b1f;
+    transform: scale(1.05);
+}
+
+/* Workshop Header Section */
+.workshop-header {
+    text-align: center; /* ממקם את הכותרת והתיאור במרכז */
+    margin: 20px 0; /* ריווח מלמעלה ומלמטה */
+}
+
+.workshop-header h1 {
+    font-size: 32px; /* גודל הכותרת */
+    color: #a44a14; /* צבע הכותרת */
+    margin-bottom: 10px; /* ריווח מתחת לכותרת */
+}
+
+.workshop-header p {
+    font-size: 22px; /* גודל התיאור */
+    color: #555; /* צבע התיאור */
+    margin: 0 auto; /* יישור למרכז */
+    max-width: 600px; /* מגביל את רוחב התיאור */
+    line-height: 1.6; /* מרווח שורות */
+}
+
+/* Menu Section */
+.menu-section {
+    margin: 20px auto; /* ריווח סביב התפריט */
+    padding: 20px; /* ריווח פנימי */
+    background-color: #fff5cd; /* צבע רקע נעים */
+    border: 2px solid #a44a14; /* גבול בצבע תואם */
+    border-radius: 12px; /* פינות מעוגלות */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* צל ליצירת עומק */
+    max-width: 250px; /* מגביל את הרוחב */
+    text-align: center; /* ממרכז את התוכן */
+}
+
+.menu-section h2 {
+    color: #a44a14; /* צבע הכותרת */
+    font-size: 28px; /* גודל טקסט */
+    margin-bottom: 15px; /* ריווח מתחת לכותרת */
+}
+
+.menu-section ul {
+    list-style: none; /* הסרת עיגולי רשימה */
+    padding: 0; /* ביטול ריווח פנימי */
+    margin: 0; /* ביטול ריווח חיצוני */
+}
+
+.menu-section ul li {
+    font-family: 'Playfair Display', serif; /* פונטים אלגנטיים */
+    font-size: 18px; /* גודל טקסט מתאים */
+    color: #333; /* צבע הטקסט */
+    margin: 10px 0; /* ריווח בין הפריטים */
+    padding: 5px; /* ריווח פנימי */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* אפקט מעבר */
+}
+
+.menu-section ul li:hover {
+    background-color: #d65b1f; /* שינוי צבע בריחוף */
+    color: white; /* שינוי צבע טקסט */
+    transform: scale(1.05); /* הגדלה קלה */
+    border-radius: 8px; /* פינות מעוגלות גם בריחוף */
+}
+
+/* Summary Section */
+.summary-section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff5cd;
+    border: 2px solid #a44a14;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: left;
+    font-size: 18px;
+    color: #333;
+}
+
+.summary-section p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+
+
+>>>>>>> c242babb6103c8fb6a52007c4d27a8ffd028f1f0
