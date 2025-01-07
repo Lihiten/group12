@@ -162,6 +162,10 @@ header nav ul li a {
     transform: rotate(-5deg); /* יוצרת את האפקט האלכסוני */
 }
 
+.diagonal-sidebar.second-sidebar {
+    right: 200px; /* הזזה שמאלה לעומת הסרגל הראשון */
+}
+
 .diagonal-image {
     width: 140px; /* גודל התמונות */
     height: auto;
