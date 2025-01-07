@@ -1,0 +1,191 @@
+/* רקע כללי */
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff5cd; /* רקע שמנת */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* גובה מינימלי של המסך */
+}
+
+/* Main Content */
+main {
+    flex: 1; /* גורם לתוכן המרכזי לדחוף את ה-footer */
+}
+
+/* Header */
+header {
+    background-color: #a44a14; /* חמרה */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Left Section */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* מרכז אנכית */
+    align-items: flex-start; /* מיושר לשמאל */
+    margin-left: 50px; /* רווח מהצד השמאלי */
+    height: calc(100vh - 160px); /* גובה המסך פחות ה-Header וה-Footer */
+}
+
+.left-section .side-logo {
+    width: 350px; /* גודל הלוגו */
+    height: auto;
+}
+
+.logo-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; /* רווח בין האלמנטים */
+    margin-left: 50px; /* מרחק מהקצה השמאלי */
+    color: #000000; /* צבע שחור */
+}
+
+.logo-text h1 {
+    font-size: 50px; /* גודל כותרת */
+    margin: 0;
+}
+
+.logo-text p {
+    font-size: 18px; /* גודל טקסט */
+    margin: 5px 0 0;
+}
+
+/* כפתור */
+.button {
+    display: inline-block;
+    margin: -80px 0 0 140px; /* מיקום הכפתור */
+    padding: 10px 15px;
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #d65b1f; /* חמרה כהה יותר */
+    transform: scale(1.1); /* הגדלה בעת ריחוף */
+}
+
+/* Right Sidebar with Two Columns */
+.right-sidebar {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.image-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* כוכבים */
+.star {
+    display: block;
+    margin-top: 10px; /* רווח בין התמונות לטקסט */
+}
+
+.small-star,
+.large-star {
+    margin-left: 0; /* איפוס רווח אופקי */
+    margin-top: 10px; /* רווח בין הכוכבים */
+    align-self: flex-start; /* יישור לשמאל */
+}
+
+.small-star {
+    width: 30px; /* גודל קטן */
+    height: auto;
+}
+
+.large-star {
+    width: 50px; /* גודל גדול יותר */
+    height: auto;
+}
+
+.top-right-star {
+    position: absolute;
+    top: -30px; /* הזזה למעלה */
+    right: -50px; /* הזזה ימינה */
+    width: 50px; /* גודל הכוכב */
+    height: auto;
+}
+
+/* סרגל אלכסוני */
+.diagonal-sidebar {
+    position: fixed;
+    top: 80px; /* ריווח מהחלק העליון */
+    right: 20px; /* ריווח מהצד הימני */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px; /* ריווח בין התמונות */
+    transform: rotate(-5deg); /* יוצרת את האפקט האלכסוני */
+}
+
+.diagonal-sidebar.second-sidebar {
+    right: 200px; /* הזזה שמאלה לעומת הסרגל הראשון */
+}
+
+.diagonal-image {
+    width: 140px; /* גודל התמונות */
+    height: auto;
+    object-fit: cover;
+    background-color: white; /* מסגרת לבנה */
+    padding: 5px; /* ריווח למסגרת */
+    border-radius: 10px; /* פינות מעוגלות */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה */
+    transition: transform 0.3s ease;
+}
+
+.diagonal-image:hover {
+    transform: scale(1.05) rotate(-5deg); /* הגדלה עם שמירה על אלכסון */
+}
+
+/* Footer */
+footer {
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
