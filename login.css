@@ -1,90 +1,14 @@
 /* רקע כללי */
-/* רקע כללי */
 body {
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff5cd; /* רקע שמנת */
+    color: #333;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    flex: 1; /* דוחף את ה-footer לתחתית העמוד */
     min-height: 100vh; /* גובה מינימלי של המסך */
-}
-
-/* תוכן מרכזי */
-.login-container {
-    background-color: white;
-    border: 3px solid #a44a14; /* חמרה */
-    border-radius: 20px; /* פינות מעוגלות */
-    width: 90%;
-    max-width: 400px; /* רוחב מקסימלי */
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* הצללה */
-    text-align: center;
-    margin-top: 50px;
-}
-
-/* כותרת */
-.login-container h2 {
-    color: #a44a14; /* חמרה */
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-/* טופס */
-.login-container label {
-    display: block;
-    margin-bottom: 10px;
-    color: #a44a14; /* חמרה */
-    font-weight: bold;
-}
-
-.login-container input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #a44a14;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.login-button {
-    background-color: #a44a14; /* חמרה */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.login-button:hover {
-    background-color: #d65b1f; /* חמרה כהה יותר */
-    transform: scale(1.05); /* הגדלה קלה */
-}
-
-/* קישור לתחילת הרשמה */
-.login-container p {
-    margin-top: 10px;
-}
-
-.login-container a {
-    color: #a44a14;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.login-container a:hover {
-    color: #d65b1f; /* חמרה כהה */
-}
-
-
-/* Main Content */
-main {
-    flex: 1; /* גורם לתוכן המרכזי לדחוף את ה-footer */
 }
 
 /* Header */
@@ -97,7 +21,7 @@ header {
 }
 
 header .logo img {
-    height: 60px;
+    height: 60px; /* גובה הלוגו */
 }
 
 header nav ul {
@@ -114,33 +38,113 @@ header nav ul li a {
     font-weight: bold;
 }
 
-/* אפקט hover על הקישורים בתפריט הניווט */
 header nav ul li a:hover {
-    color: #fff5cd;
-    font-size: 1.2em; /* מגדיל את הטקסט */
-    font-weight: bold; /* מדגיש את הטקסט */
-    transition: all 0.3s ease; /* אפקט מעבר חלק */
+    color: #fff5cd; /* צבע חמרה בהיר */
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-/* כפתור */
-.button {
-    display: inline-block;
-    margin: -80px 0 0 140px; /* מיקום הכפתור */
-    padding: 10px 15px;
+/* Login Container */
+.login-container {
+    background-color: white;
+    border: 3px solid #a44a14; /* חמרה */
+    border-radius: 30px; /* פינות מעוגלות */
+    max-width: 400px;
+    padding: 20px;
+    margin: 50px auto; /* מיקום מרכזי */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* הצללה */
+    width: 90%;
+}
+
+/* כותרת לוגין */
+.login-header h2 {
     background-color: #a44a14; /* חמרה */
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    margin: -20px -20px 20px -20px; /* ביטול רווח פנימי ותחתון */
+    border-radius: 20px 20px 0 0; /* פינות מעוגלות עליונות */
+    position: relative; /* מאפשר מיקום יחסי לתמונה */
+    font-size: 20px; /* הקטנת גודל הכותרת */
     font-weight: bold;
-    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.button:hover {
+/* עיצוב הקונטיינר של הכותרת */
+.login-header {
+    position: relative; /* מאפשר מיקום יחסי לתמונה */
+    text-align: center; /* ממרכז את הטקסט */
+    color: #a44a14; /* צבע חמרה */
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-size: 20px; /* גודל הכותרת */
+    font-weight: bold; /* הדגשת הכותרת */
+}
+
+/* עיצוב האייקון */
+.login-header .login-icon {
+    position: absolute; /* מאפשר למקם את האייקון יחסית לכותרת */
+    top: 50%; /* מיקום אנכי */
+    right: 140px; /* הזזה שמאלה יחסית לכותרת */
+    transform: translateY(-50%); /* ממרכז את האייקון אנכית לכותרת */
+    width: 20px; /* גודל האייקון */
+    height: auto; /* שמירת פרופורציות */
+}
+
+
+
+
+/* טופס לוגין */
+.login-form label {
+    display: block;
+    color: #a44a14; /* חמרה */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #a44a14;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.login-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
     background-color: #d65b1f; /* חמרה כהה יותר */
-    transform: scale(1.1); /* הגדלה בעת ריחוף */
 }
 
+/* קישור למשתמש חדש */
+.new-user {
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+}
 
+.new-user a {
+    color: #a44a14; /* חמרה */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.new-user a:hover {
+    text-decoration: underline;
+}
 
 /* Footer */
 footer {
@@ -149,4 +153,7 @@ footer {
     text-align: center;
     padding: 10px;
     width: 100%;
+    margin-top: auto; /* מבטיח שה-footer יוצמד לתחתית */
 }
+
+
