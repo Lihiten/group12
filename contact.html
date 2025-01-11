@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cook Master - Contact Us </title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
    <!-- Header -->
@@ -20,28 +20,38 @@
                 <li><a href="workshops.html">Workshops</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
                 <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">contact</a></li>
+
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h2>צור קשר</h2>
-        <form>
-            <label for="name">שם מלא:</label>
+   <main>
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2>Contact Us</h2>
+        </div>
+        <form class="contact-form">
+            <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="email">דוא"ל:</label>
+            <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="message">הודעה:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
 
-            <button type="submit">שלח</button>
+            <label for="message">How can we help you?</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
         </form>
-    </main>
+    </div>
+</main>
+
 
     <footer>
-        <p>© 2024 Cook Master. כל הזכויות שמורות.</p>
+        <p>&copy; 2024 Cook Master. All rights reserved.</p>
     </footer>
   <!-- Link to External JavaScript -->
     <script src="script.js"></script>

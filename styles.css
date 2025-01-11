@@ -1,6 +1,7 @@
+
 /* רקע כללי */
 body {
-    font-family: 'Playfair Display', serif;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff5cd; /* רקע שמנת */
@@ -15,67 +16,56 @@ main {
     flex: 1; /* גורם לתוכן המרכזי לדחוף את ה-footer */
 }
 
-/* Header */
+/* עיצוב הכותרת העליונה */
 header {
-    background-color: #a44a14; /* חמרה */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    background-color: #a44a14; /* צבע חמרה */
+    display: flex; /* שימוש ב-Flexbox */
+    justify-content: space-between; /* מרחק בין פריטי התפריט */
+    align-items: center; /* מיקום אנכי של פריטים */
+    padding: 10px 20px; /* רווח פנימי */
 }
 
 header .logo img {
-    height: 60px;
+    height: 60px; /* גובה הלוגו */
 }
 
 header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 15px;
+    list-style: none; /* הסרת עיגולי רשימה */
+    margin: 0; /* ביטול רווח חיצוני */
+    padding: 0; /* ביטול רווח פנימי */
+    display: flex; /* תפריט אופקי */
+    gap: 15px; /* מרווח בין פריטי התפריט */
 }
 
 header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    color: white; /* צבע טקסט */
+    text-decoration: none; /* ביטול קו תחתון */
+    font-weight: bold; /* הדגשה */
 }
 
-/* Left Section */
-.left-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* מרכז אנכית */
-    align-items: flex-start; /* מיושר לשמאל */
-    margin-left: 50px; /* רווח מהצד השמאלי */
-    height: calc(100vh - 160px); /* גובה המסך פחות ה-Header וה-Footer */
+/* אפקט hover על הקישורים בתפריט הניווט */
+header nav ul li a:hover {
+    color: #fff5cd;
+    font-size: 1.2em; /* מגדיל את הטקסט */
+    font-weight: bold; /* מדגיש את הטקסט */
+    transition: all 0.3s ease; /* אפקט מעבר חלק */
 }
+
+
+.left-section {
+    position: relative;
+    z-index: 1;
+}
+
+
 
 .left-section .side-logo {
     width: 350px; /* גודל הלוגו */
-    height: auto;
+    height: auto; /* התאמה לגובה אוטומטית */
 }
 
-.logo-text {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px; /* רווח בין האלמנטים */
-    margin-left: 50px; /* מרחק מהקצה השמאלי */
-    color: #000000; /* צבע שחור */
-}
 
-.logo-text h1 {
-    font-size: 50px; /* גודל כותרת */
-    margin: 0;
-}
 
-.logo-text p {
-    font-size: 18px; /* גודל טקסט */
-    margin: 5px 0 0;
-}
 
 /* כפתור */
 .button {

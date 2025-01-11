@@ -1,18 +1,20 @@
-/* רקע כללי */
+/* עיצוב כללי */
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff5cd; /* רקע שמנת */
-    color: #333;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* גובה מינימלי של המסך */
+    flex-direction: column; /* מסדר תוכן אנכי */
+    min-height: 100vh; /* גובה מלא */
 }
 
-/* Main Content */
+/* Main */
 main {
-    flex: 1; /* גורם לתוכן המרכזי לדחוף את ה-footer */
+    flex: 1; /* תוכן ראשי דוחף את ה-footer */
+    display: flex;
+    justify-content: center; /* מרכז את התוכן אופקית */
+    align-items: center; /* מרכז את התוכן אנכית */
 }
 
 /* Header */
@@ -22,6 +24,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    position: sticky; /* שומר על הכותרת העליונה במקום */
+    top: 0;
+    z-index: 1000;
 }
 
 header .logo img {
@@ -42,147 +47,76 @@ header nav ul li a {
     font-weight: bold;
 }
 
-/* Left Section */
-.left-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* מרכז אנכית */
-    align-items: flex-start; /* מיושר לשמאל */
-    margin-left: 50px; /* רווח מהצד השמאלי */
-    height: calc(100vh - 160px); /* גובה המסך פחות ה-Header וה-Footer */
+/* אפקט hover על הקישורים בתפריט הניווט */
+header nav ul li a:hover {
+    color: #fff5cd;
+    font-size: 1.2em; /* מגדיל את הטקסט */
+    font-weight: bold; /* מדגיש את הטקסט */
+    transition: all 0.3s ease; /* אפקט מעבר חלק */
 }
 
-.left-section .side-logo {
-    width: 350px; /* גודל הלוגו */
-    height: auto;
+/* מסגרת המסך (דמוי אייפון) */
+.contact-container {
+    background-color: white;
+    border: 3px solid #a44a14; /* חמרה */
+    border-radius: 40px; /* פינות מעוגלות */
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* הצללה */
+    width: 90%;
+    margin-top: 20px; /* רווח מלמעלה */
 }
 
-.logo-text {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px; /* רווח בין האלמנטים */
-    margin-left: 50px; /* מרחק מהקצה השמאלי */
-    color: #000000; /* צבע שחור */
-}
-
-.logo-text h1 {
-    font-size: 50px; /* גודל כותרת */
-    margin: 0;
-}
-
-.logo-text p {
-    font-size: 18px; /* גודל טקסט */
-    margin: 5px 0 0;
-}
-
-/* כפתור */
-.button {
-    display: inline-block;
-    margin: -80px 0 0 140px; /* מיקום הכפתור */
-    padding: 10px 15px;
+/* כותרת */
+.contact-header {
     background-color: #a44a14; /* חמרה */
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 20px 20px 0 0; /* פינות מעוגלות עליונות */
+    margin-bottom: 20px;
 }
 
-.button:hover {
-    background-color: #d65b1f; /* חמרה כהה יותר */
-    transform: scale(1.1); /* הגדלה בעת ריחוף */
-}
-
-/* Right Sidebar with Two Columns */
-.right-sidebar {
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    display: flex;
-    gap: 20px;
-}
-
-.image-column {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.sidebar-image {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* כוכבים */
-.star {
+/* טופס */
+.contact-form label {
     display: block;
-    margin-top: 10px; /* רווח בין התמונות לטקסט */
+    color: #a44a14; /* חמרה */
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.small-star,
-.large-star {
-    margin-left: 0; /* איפוס רווח אופקי */
-    margin-top: 10px; /* רווח בין הכוכבים */
-    align-self: flex-start; /* יישור לשמאל */
+.contact-form input,
+.contact-form textarea {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #a44a14;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
 }
 
-.small-star {
-    width: 30px; /* גודל קטן */
-    height: auto;
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.large-star {
-    width: 50px; /* גודל גדול יותר */
-    height: auto;
-}
-
-.top-right-star {
-    position: absolute;
-    top: -30px; /* הזזה למעלה */
-    right: -50px; /* הזזה ימינה */
-    width: 50px; /* גודל הכוכב */
-    height: auto;
-}
-
-/* סרגל אלכסוני */
-.diagonal-sidebar {
-    position: fixed;
-    top: 80px; /* ריווח מהחלק העליון */
-    right: 20px; /* ריווח מהצד הימני */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 15px; /* ריווח בין התמונות */
-    transform: rotate(-5deg); /* יוצרת את האפקט האלכסוני */
-}
-
-.diagonal-sidebar.second-sidebar {
-    right: 200px; /* הזזה שמאלה לעומת הסרגל הראשון */
-}
-
-.diagonal-image {
-    width: 140px; /* גודל התמונות */
-    height: auto;
-    object-fit: cover;
-    background-color: white; /* מסגרת לבנה */
-    padding: 5px; /* ריווח למסגרת */
-    border-radius: 10px; /* פינות מעוגלות */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה */
-    transition: transform 0.3s ease;
-}
-
-.diagonal-image:hover {
-    transform: scale(1.05) rotate(-5deg); /* הגדלה עם שמירה על אלכסון */
+.contact-form button:hover {
+    background-color: #d65b1f; /* חמרה כהה יותר */
 }
 
 /* Footer */
 footer {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     background-color: #a44a14; /* חמרה */
     color: white;
     text-align: center;
