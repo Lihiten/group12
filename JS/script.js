@@ -53,6 +53,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+
+    if (form) {
+        // בדיקת סיסמה
+        const passwordInput = document.getElementById("password");
+        passwordInput.addEventListener("input", function (event) {
+            if (passwordInput.value.length < 8) {
+                event.target.setCustomValidity("The password must be at least 8 characters long.");
+            } else {
+                event.target.setCustomValidity("");
+            }
+        });
+
+        // בדיקת גיל
+        const ageInput = document.getElementById("age");
+        ageInput.addEventListener("input", function (event) {
+            if (ageInput.value < 18) {
+                event.target.setCustomValidity("You must be at least 18 years old to sign up.");
+            } else {
+                event.target.setCustomValidity("");
+            }
+        });
+
+        // טיפול בטעינת הטופס
+        form.addEventListener("submit", function (event) {
+            // בדיקה סופית לפני שליחת הטופס
+            if (passwordInput.value.length < 8) {
+                event.preventDefault();
+                alert("Password must be at least 8 characters long.");
+            }
+
+            if (ageInput.value < 18) {
+                event.preventDefault();
+                alert("You must be at least 18 years old to sign up.");
+            }
+        });
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
     const type = params.get("type");
 

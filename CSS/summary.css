@@ -36,6 +36,13 @@ header nav ul li a {
     font-weight: bold;
 }
 
+/* אפקט hover על הקישורים בתפריט הניווט */
+header nav ul li a:hover {
+    color: #fff5cd;
+    font-size: 1.2em; /* מגדיל את הטקסט */
+    font-weight: bold; /* מדגיש את הטקסט */
+    transition: all 0.3s ease; /* אפקט מעבר חלק */
+}
 
 .summary-section {
     margin: 20px auto;
