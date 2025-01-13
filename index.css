@@ -57,10 +57,21 @@ header nav ul li a:hover {
 }
 
 
-
 .left-section .side-logo {
     width: 350px; /* גודל הלוגו */
     height: auto; /* התאמה לגובה אוטומטית */
+}
+
+/*(logo-text) אנימציה ל-welcome */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%); /* מתחיל מחוץ למסך בצד שמאל */
+        opacity: 0; /* שקיפות מלאה */
+    }
+    to {
+        transform: translateX(0); /* מגיע למיקום הסופי */
+        opacity: 1; /* אטום לחלוטין */
+    }
 }
 
 /* טקסט הכותרת הראשית */
@@ -73,8 +84,8 @@ header nav ul li a:hover {
     margin-left: 50px; /* רווח מהקצה השמאלי */
     margin-top: 100px; /* הוספת רווח מלמעלה */
     color: #000000; /* צבע שחור */
+    animation: slideInFromLeft 1s ease-out; /* מפעיל את האנימציה */
 }
-
 
 .logo-text h1 {
     font-size: 50px; /* גודל כותרת */
@@ -85,6 +96,7 @@ header nav ul li a:hover {
     font-size: 18px; /* גודל טקסט של הפסקה */
     margin: 5px 0 0; /* רווח מעל */
 }
+
 
 /* עיצוב כפתור "Let's Cook!" */
 .buttonCook {
@@ -99,6 +111,7 @@ header nav ul li a:hover {
     transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer; /* הופך את הכפתור ללחיץ */
 }
+
 
 .buttonCook:hover {
     background-color: #d65b1f; /* חמרה כהה יותר */
@@ -150,12 +163,12 @@ header nav ul li a:hover {
 .top-right-star {
     position: absolute; /* מיקום יחסי לתיבה */
     top: -30px; /* הזזה למעלה */
-    right: -50px; /* הזזה ימינה */
+    right: 500px; /* הזזה ימינה */
     width: 50px; /* גודל הכוכב */
     height: auto;
 }
 
-/* עיצוב סרגל אלכסוני */
+/* עיצוב סרגל תמונות אלכסוני */
 .diagonal-sidebar {
     position: fixed; /* מיקום קבוע */
     top: 80px; /* מרווח מהחלק העליון */
@@ -182,9 +195,7 @@ header nav ul li a:hover {
     transition: transform 0.3s ease; /* אנימציה חלקה */
 }
 
-.diagonal-image:hover {
-    transform: scale(1.05) rotate(-5deg); /* הגדלה עם אפקט אלכסון */
-}
+
 
 
 /* Footer */

@@ -1,6 +1,6 @@
 /* רקע כללי */
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff5cd; /* רקע שמנת */
@@ -42,144 +42,64 @@ header nav ul li a {
     font-weight: bold;
 }
 
-/* Left Section */
-.left-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* מרכז אנכית */
-    align-items: flex-start; /* מיושר לשמאל */
-    margin-left: 50px; /* רווח מהצד השמאלי */
-    height: calc(100vh - 160px); /* גובה המסך פחות ה-Header וה-Footer */
+/* עיצוב קונטיינר הסינאפ */
+.signup-container {
+    background-color: white;
+    border: 2px solid #a44a14; /* חמרה */
+    border-radius: 20px; /* פינות מעוגלות */
+    max-width: 400px;
+    margin: 50px auto; /* ריווח אוטומטי */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* הצללה */
+    text-align: center; /* מרכז את הטקסט */
 }
 
-.left-section .side-logo {
-    width: 350px; /* גודל הלוגו */
-    height: auto;
+/* כותרת */
+.signup-container h2 {
+    color: #a44a14; /* חמרה */
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.logo-text {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px; /* רווח בין האלמנטים */
-    margin-left: 50px; /* מרחק מהקצה השמאלי */
-    color: #000000; /* צבע שחור */
+/* עיצוב השדות */
+.signup-container form label {
+    display: block;
+    color: #a44a14; /* חמרה */
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left; /* יישור לשמאל */
 }
 
-.logo-text h1 {
-    font-size: 50px; /* גודל כותרת */
-    margin: 0;
-}
-
-.logo-text p {
-    font-size: 18px; /* גודל טקסט */
-    margin: 5px 0 0;
+.signup-container form input {
+    width: calc(100% - 20px); /* ריווח פנימי */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #a44a14; /* חמרה */
+    border-radius: 10px; /* פינות מעוגלות */
+    font-size: 16px;
+    outline: none; /* ביטול קו מסגרת */
 }
 
 /* כפתור */
-.button {
-    display: inline-block;
-    margin: -80px 0 0 140px; /* מיקום הכפתור */
-    padding: 10px 15px;
+.signup-container .button {
+    display: block;
+    width: 100%;
+    padding: 10px;
     background-color: #a44a14; /* חמרה */
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    font-size: 18px;
     font-weight: bold;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #d65b1f; /* חמרה כהה יותר */
-    transform: scale(1.1); /* הגדלה בעת ריחוף */
-}
-
-/* Right Sidebar with Two Columns */
-.right-sidebar {
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    display: flex;
-    gap: 20px;
-}
-
-.image-column {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.sidebar-image {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* כוכבים */
-.star {
-    display: block;
-    margin-top: 10px; /* רווח בין התמונות לטקסט */
-}
-
-.small-star,
-.large-star {
-    margin-left: 0; /* איפוס רווח אופקי */
-    margin-top: 10px; /* רווח בין הכוכבים */
-    align-self: flex-start; /* יישור לשמאל */
-}
-
-.small-star {
-    width: 30px; /* גודל קטן */
-    height: auto;
-}
-
-.large-star {
-    width: 50px; /* גודל גדול יותר */
-    height: auto;
-}
-
-.top-right-star {
-    position: absolute;
-    top: -30px; /* הזזה למעלה */
-    right: -50px; /* הזזה ימינה */
-    width: 50px; /* גודל הכוכב */
-    height: auto;
-}
-
-/* סרגל אלכסוני */
-.diagonal-sidebar {
-    position: fixed;
-    top: 80px; /* ריווח מהחלק העליון */
-    right: 20px; /* ריווח מהצד הימני */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 15px; /* ריווח בין התמונות */
-    transform: rotate(-5deg); /* יוצרת את האפקט האלכסוני */
-}
-
-.diagonal-sidebar.second-sidebar {
-    right: 200px; /* הזזה שמאלה לעומת הסרגל הראשון */
-}
-
-.diagonal-image {
-    width: 140px; /* גודל התמונות */
-    height: auto;
-    object-fit: cover;
-    background-color: white; /* מסגרת לבנה */
-    padding: 5px; /* ריווח למסגרת */
+    border: none;
     border-radius: 10px; /* פינות מעוגלות */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה */
-    transition: transform 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.diagonal-image:hover {
-    transform: scale(1.05) rotate(-5deg); /* הגדלה עם שמירה על אלכסון */
+.signup-container .button:hover {
+    background-color: #d65b1f; /* חמרה כהה יותר */
 }
+
 
 /* Footer */
 footer {
