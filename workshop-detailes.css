@@ -58,6 +58,14 @@ header nav ul li a {
     line-height: 1.6; /* מרווח שורות */
 }
 
+/* אפקט hover על הקישורים בתפריט הניווט */
+header nav ul li a:hover {
+    color: #fff5cd;
+    font-size: 1.2em; /* מגדיל את הטקסט */
+    font-weight: bold; /* מדגיש את הטקסט */
+    transition: all 0.3s ease; /* אפקט מעבר חלק */
+}
+
 /* Menu Section */
 .menu-section {
     margin: 20px auto; /* ריווח סביב התפריט */
