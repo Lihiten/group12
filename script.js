@@ -10,48 +10,47 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // ולידציה בסיסית לטופס צור קשר
-document.querySelector("form")?.addEventListener("submit", function(event) {
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+document.addEventListener("DOMContentLoaded", function () {
+    const validateForm = (form) => {
+        const email = form.querySelector("#email").value;
+        const phone = form.querySelector("#phone").value;
+        const age = form.querySelector("#age")?.value || "";
 
-    if (!email.includes("@")) {
-        alert("אנא הזן דוא\"ל חוקי.");
-        event.preventDefault();
-    }
+        let hasError = false;
 
-    if (message.trim() === "") {
-        alert("אנא מלא את שדה ההודעה.");
-        event.preventDefault();
-    }
-});
-
-
-// ולידציה בסיסית לטופס צור קשר
-document.querySelector("form")?.addEventListener("submit", function(event) {
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-
-    if (!email.includes("@")) {
-        alert("Please enter a valid email.");
-        event.preventDefault();
-    }
-
-    if (message.trim() === "") {
-        alert("אנא מלא את שדה ההודעה.");
-        event.preventDefault();
-    }
-})// ולידציה למספר הטלפון בטופס
-document.addEventListener("DOMContentLoaded", function() {
-    const phoneInput = document.getElementById("phone");
-    phoneInput.addEventListener("input", function(event) {
-        const phone = event.target.value;
-        if (!/^0\d{9}$/.test(phone)) {
-            event.target.setCustomValidity("The phone number must be 10 digits long and start with 0.");
-        } else {
-            event.target.setCustomValidity("");
+        // בדיקת אימייל
+        if (!email.includes("@")) {
+            alert("Please enter a valid email.");
+            hasError = true;
         }
-    });
+
+        // בדיקת מספר טלפון
+        if (!/^0\d{9}$/.test(phone)) {
+            alert("The phone number must be 10 digits long and start with 0.");
+            hasError = true;
+        }
+
+        // בדיקת גיל
+        if (age && (isNaN(age) || age <= 0)) {
+            alert("Please enter a valid age.");
+            hasError = true;
+        }
+
+        return hasError;
+    };
+
+    // חיבור מאזין לטופס signup
+    const signupForm = document.querySelector(".signup-form form");
+    if (signupForm) {
+        signupForm.addEventListener("submit", function (event) {
+            if (validateForm(signupForm)) {
+                event.preventDefault(); // עצירת שליחה אם יש שגיאות
+            }
+        });
+    }
 });
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);

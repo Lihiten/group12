@@ -43,7 +43,7 @@ header nav ul li a {
 }
 
 /* עיצוב קונטיינר הסינאפ */
-.signup-container {
+.signup-form {
     background-color: white;
     border: 2px solid #a44a14; /* חמרה */
     border-radius: 20px; /* פינות מעוגלות */
@@ -55,7 +55,7 @@ header nav ul li a {
 }
 
 /* כותרת */
-.signup-container h2 {
+.signup-form h2 {
     color: #a44a14; /* חמרה */
     margin-bottom: 20px;
     font-size: 24px;
@@ -63,7 +63,7 @@ header nav ul li a {
 }
 
 /* עיצוב השדות */
-.signup-container form label {
+.signup-form form label {
     display: block;
     color: #a44a14; /* חמרה */
     font-weight: bold;
@@ -71,7 +71,7 @@ header nav ul li a {
     text-align: left; /* יישור לשמאל */
 }
 
-.signup-container form input {
+.signup-form form input {
     width: calc(100% - 20px); /* ריווח פנימי */
     padding: 10px;
     margin-bottom: 15px;
@@ -82,7 +82,7 @@ header nav ul li a {
 }
 
 /* כפתור */
-.signup-container .button {
+.signup-form .button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -96,7 +96,7 @@ header nav ul li a {
     transition: background-color 0.3s ease;
 }
 
-.signup-container .button:hover {
+.signup-form .button:hover {
     background-color: #d65b1f; /* חמרה כהה יותר */
 }
 
