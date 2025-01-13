@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cook Master - Login</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Cook Master - Sign Up</title>
+    <link rel="stylesheet" href="../CSS/signup.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="images/logo.jpg" alt="Cook Master Logo">
+            <img src="../images/logo.jpg" alt="Cook Master Logo">
         </div>
         <nav>
             <ul>
@@ -24,23 +23,28 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- Sign Up Form -->
     <main>
-        <div class="login-container">
-            <div class="login-header">
-                <h2>Login</h2>
-            <img src="images/sacum.jpg" alt="Sacum Icon" class="login-icon">
+        <div class="signup-form">
+            <h2>Sign Up</h2>
+            <form>
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required>
 
-            </div>
-            <form class="login-form">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
 
-                <button type="submit">Be A Master!</button>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="1" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <button type="submit" class="button">Be A Master!</button>
             </form>
-            <p class="new-user">New Master? <a href="signup.html">Start here</a></p>
         </div>
     </main>
 
@@ -48,5 +52,9 @@
     <footer>
         <p>&copy; 2024 Cook Master. All rights reserved.</p>
     </footer>
+
+ <!-- חיבור קובץ ה-JavaScript -->
+    <script src="../JS/script.js"></script>
+
 </body>
 </html>
