@@ -27,7 +27,7 @@
     <main>
         <div class="signup-form">
             <h2>Sign Up</h2>
-            <form>
+            <form onsubmit="saveUserName(); return true;">
                 <label for="full-name">Full Name:</label>
                 <input type="text" id="full-name" name="full-name" required>
 
@@ -47,15 +47,25 @@
             </form>
         </div>
     </main>
-    <script src="script.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        function saveUserName() {
+            const fullName = document.getElementById("full-name").value;
+            const firstName = fullName.split(" ")[0]; // מקבל את השם הפרטי בלבד
+
+            // שמירת השם ב-localStorage
+            localStorage.setItem("userName", firstName);
+
+            // הפניה לדף הבית
+            window.location.href = "index.html";
+        }
+    </script>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Cook Master. All rights reserved.</p>
     </footer>
-
- <!-- חיבור קובץ ה-JavaScript -->
-    <script src="../JS/script.js"></script>
 
 </body>
 </html>
