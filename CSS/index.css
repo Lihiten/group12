@@ -194,8 +194,19 @@ header nav ul li a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה */
     transition: transform 0.3s ease; /* אנימציה חלקה */
 }
+/* אפקט שקיפות לעמודים */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
 
-
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 
 /* Footer */

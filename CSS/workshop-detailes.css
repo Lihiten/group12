@@ -157,6 +157,20 @@ header nav ul li a:hover {
     transform: scale(1.05);
 }
 
+/* אפקט שקיפות לעמודים */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Footer */
 footer {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;

@@ -45,22 +45,25 @@ header nav ul li a:hover {
 }
 
 .summary-section {
-    margin: 20px auto;
+    margin: 20px auto; /* מרכז את התיבה */
     padding: 20px;
     background-color: #fff5cd;
     border: 2px solid #a44a14;
-    border-radius: 12px;
+    border-radius: 12px; /* פינות מעוגלות */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    display: inline-block; /* מתאים את הרוחב לגודל התוכן */
     text-align: left;
     font-size: 18px;
     color: #333;
+    line-height: 1.6;
 }
 
 .summary-section p {
-    margin: 10px 0;
-    line-height: 1.5;
+    margin: 10px 0; /* ריווח בין פסקאות */
+    text-align: left;
 }
+
+
 
 /* Footer */
 footer {
@@ -85,6 +88,19 @@ main {
     flex: 1; /* תופס את כל השטח הפנוי */
     text-align: center; /* יישור טקסט למרכז */
     padding: 20px; /* ריווח פנימי */
+}
+/* אפקט שקיפות לעמודים */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Footer - Always at the Bottom */

@@ -146,6 +146,20 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* אפקט שקיפות לעמודים */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Footer */
 footer {
     background-color: #a44a14; /* חמרה */

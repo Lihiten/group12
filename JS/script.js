@@ -1,14 +1,4 @@
 
-// ברכה למשתמש בדף הבית
-document.addEventListener("DOMContentLoaded", function() {
-    if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
-        const greeting = document.createElement("p");
-        greeting.textContent = "Welcome to Cook Master!";
-        document.querySelector("main").appendChild(greeting);
-    }
-});
-
-
 // ולידציה בסיסית לטופס צור קשר
 document.addEventListener("DOMContentLoaded", function () {
     const validateForm = (form) => {
