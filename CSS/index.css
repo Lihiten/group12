@@ -199,6 +199,27 @@ body {
     animation: fadeIn 0.8s ease-in-out;
 }
 
+.greeting-text {
+    font-size: 18px;
+    color: #a44a14; /* צבע חמרה */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px; /* רווח מתחת לטקסט */
+    animation: fadeIn 1s ease-in-out; /* אנימציה לכניסה חלקה */
+}
+
+/* אנימציית fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;

@@ -107,6 +107,18 @@ header nav ul li a:hover {
     background-color: #d65b1f; /* חמרה כהה יותר */
 }
 
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none; /* מוסתר כברירת מחדל */
+}
+
+input.error {
+    border: 2px solid red; /* גבול אדום לשדה עם שגיאה */
+}
+
+
 /* אפקט שקיפות לעמודים */
 body {
     animation: fadeIn 0.8s ease-in-out;

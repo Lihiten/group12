@@ -27,21 +27,26 @@
     <main>
         <div class="signup-form">
             <h2>Sign Up</h2>
-            <form onsubmit="saveUserName(); return true;">
+            <form onsubmit="saveUserName(); return false;">
                 <label for="full-name">Full Name:</label>
                 <input type="text" id="full-name" name="full-name" required>
+                <span class="error-message"></span>
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+                <span class="error-message"></span>
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
+                <span class="error-message"></span>
 
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age" min="1" required>
+                <span class="error-message"></span>
 
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" required>
+                <span class="error-message"></span>
 
                 <button type="submit" class="button">Be A Master!</button>
             </form>
@@ -49,30 +54,11 @@
     </main>
 
     <!-- JavaScript -->
-    <script>
-        function saveUserName() {
-            const fullName = document.getElementById("full-name").value;
-            const firstName = fullName.split(" ")[0]; // מקבל את השם הפרטי בלבד
-
-            // שמירת השם ב-localStorage
-            localStorage.setItem("userName", firstName);
-
-            // הפניה לדף הבית
-            window.location.href = "index.html";
-        }
-    </script>
+    <script src="../JS/signup.js"></script>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Cook Master. All rights reserved.</p>
     </footer>
-
-<<<<<<< HEAD
-=======
- <!-- חיבור קובץ ה-JavaScript -->
-   <script src="../JS/signup.js"></script>
-
-
->>>>>>> 3b1c5af300d269f843ff64696b5dfc2bc52f08b1
 </body>
 </html>
