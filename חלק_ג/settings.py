@@ -12,3 +12,6 @@ DB = {
     'password': os.environ.get('DB_PASSWORD'),
     'database': os.environ.get('DB_NAME')
 }
+MONGO_URI= "mongodb+srv://lihiten:Lihi123ten99@cluster0.t7874.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+DATABASE_NAME = "web_project"  # שם בסיס הנתונים
+COLLECTION_NAME = "data_collection"  # שם האוסף

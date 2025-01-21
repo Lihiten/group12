@@ -1,38 +1,22 @@
-from flask import Flask, render_template, request, redirect, url_for
-from pymongo import MongoClient
-import os
+from flask import Flask, render_template
+from utilities.db.db_manager import get_all_data
+from utilities.db.db_manager import insert_sample_data
+
+insert_sample_data()
+
 
 app = Flask(__name__)
 
-# חיבור ל-MongoDB
-client = MongoClient(os.getenv('MONGO_URI', 'mongodb://localhost:27017'))
-db = client['cook_master']
-users_collection = db['users']
-
-# דף הבית
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    try:
+        # שליפת נתונים ממסד הנתונים
+        data = get_all_data()
+        print(f"Fetched data: {data}")  # לוג לבדיקה
+        return render_template('home.html', data=data)
+    except Exception as e:
+        print(f"Error in home route: {e}")
+        return "An error occurred", 500
 
-# דף הרשמה
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
-    if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        password = request.form['password']
-        age = request.form['age']
-        phone = request.form['phone']
-        # שמירת משתמש ב-DB
-        users_collection.insert_one({
-            'name': name,
-            'email': email,
-            'password': password,
-            'age': int(age),
-            'phone': phone
-        })
-        return redirect(url_for('index'))
-    return render_template('signup.html')
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
