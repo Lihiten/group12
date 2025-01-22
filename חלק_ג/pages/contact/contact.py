@@ -3,10 +3,10 @@ from flask import Blueprint
 
 # about blueprint definition
 menu = Blueprint(
-    'menu',
+    'contact',
     __name__,
     static_folder='static',
-    static_url_path='/menu',
+    static_url_path='/contact',
     template_folder='templates'
 )
 
@@ -14,4 +14,4 @@ menu = Blueprint(
 # Routes
 @menu.route('/menu')
 def index():
-    return render_template('menu.html')
+    return render_template('contact.html')
