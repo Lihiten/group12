@@ -4,10 +4,10 @@ from flask import render_template, redirect, url_for
 
 # homepage blueprint definition
 profile = Blueprint(
-    'profile',
+    'workshop-details',
     __name__,
     static_folder='static',
-    static_url_path='/profile',
+    static_url_path='/workshop-details',
     template_folder='templates'
 )
 
@@ -15,4 +15,4 @@ profile = Blueprint(
 # Routes
 @profile.route('/profile')
 def index():
-    return render_template('profile.html')
+    return render_template('workshop-details.html')

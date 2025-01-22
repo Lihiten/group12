@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template
 
-# about blueprint definition
+# workshops blueprint definition
 about = Blueprint(
-    'about',
+    'workshops',
     __name__,
     static_folder='static',
-    static_url_path='/about',
+    static_url_path='/workshops',
     template_folder='templates'
 )
 
@@ -13,4 +13,4 @@ about = Blueprint(
 # Routes
 @about.route('/about')
 def index():
-    return render_template('about.html')
+    return render_template('workshops.html')

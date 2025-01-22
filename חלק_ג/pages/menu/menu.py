@@ -1,7 +1,7 @@
 from flask import render_template
 from flask import Blueprint
 
-# about blueprint definition
+# workshops blueprint definition
 menu = Blueprint(
     'menu',
     __name__,
