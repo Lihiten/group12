@@ -1,0 +1,117 @@
+body {
+     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff5cd;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #a44a14;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* אפקט hover על הקישורים בתפריט הניווט */
+header nav ul li a:hover {
+    color: #fff5cd;
+    font-size: 1.2em; /* מגדיל את הטקסט */
+    font-weight: bold; /* מדגיש את הטקסט */
+    transition: all 0.3s ease; /* אפקט מעבר חלק */
+}
+
+.summary-section {
+    margin: 20px auto; /* מרכז את התיבה */
+    padding: 20px;
+    background-color: #fff5cd;
+    border: 2px solid #a44a14;
+    border-radius: 12px; /* פינות מעוגלות */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* מתאים את הרוחב לגודל התוכן */
+    text-align: left;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.summary-section p {
+    margin: 10px 0; /* ריווח בין פסקאות */
+    text-align: left;
+}
+
+
+
+/* Footer */
+footer {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-color: #a44a14; /* צבע חמרה */
+    color: white; /* צבע טקסט */
+    text-align: center; /* יישור למרכז */
+    padding: 10px; /* ריווח פנימי */
+    width: 100%; /* רוחב מלא */
+}
+/*Locate Footer in the bottom of page and center text
+/* HTML and Body - Full Height */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content */
+main {
+    flex: 1; /* תופס את כל השטח הפנוי */
+    text-align: center; /* יישור טקסט למרכז */
+    padding: 20px; /* ריווח פנימי */
+}
+/* אפקט שקיפות לעמודים */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer - Always at the Bottom */
+footer {
+    background-color: #a44a14; /* צבע חמרה */
+    color: white; /* צבע טקסט */
+    text-align: center; /* יישור למרכז */
+    padding: 10px; /* ריווח פנימי */
+    width: 100%; /* רוחב מלא */
+    position: relative;
+}
+
+
+

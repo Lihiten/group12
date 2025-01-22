@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cook Master - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='media/img/logo.jpg') }}" alt="Cook Master Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('workshops') }}">Workshops</a></li>
+                <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="index-main">
+        <div class="left-section">
+            <div class="logo-text">
+                <h1>Welcome to Cook Master!</h1>
+                <p>Add some magic to your food.</p>
+                <img src="{{ url_for('static', filename='media/img/star.jpg') }}" alt="Star">
+            </div>
+            <a href="{{ url_for('workshops') }}" class="buttonCook">Let's Cook!</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Cook Master. All rights reserved.</p>
+    </footer>
+</body>
+</html>
