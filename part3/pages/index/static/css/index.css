@@ -1,0 +1,241 @@
+/* רקע כללי */
+body {
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin: 0; /* אין רווח חיצוני */
+    padding: 0; /* אין רווח פנימי */
+    background-color: #fff5cd; /* רקע שמנת */
+    color: #333; /* צבע טקסט כללי */
+    display: flex; /* שימוש ב-Flexbox */
+    flex-direction: column; /* כיוון תוכן אנכי */
+    min-height: 100vh; /* גובה מינימלי בגודל המסך */
+}
+
+/* תוכן ראשי */
+main {
+    flex: 1; /* תוכן ראשי ידחוף את ה-footer לתחתית */
+}
+
+/* עיצוב הכותרת העליונה */
+header {
+    background-color: #a44a14; /* צבע חמרה */
+    display: flex; /* שימוש ב-Flexbox */
+    justify-content: space-between; /* מרחק בין פריטי התפריט */
+    align-items: center; /* מיקום אנכי של פריטים */
+    padding: 10px 20px; /* רווח פנימי */
+}
+
+header .logo img {
+    height: 60px; /* גובה הלוגו */
+}
+
+header nav ul {
+    list-style: none; /* הסרת עיגולי רשימה */
+    margin: 0; /* ביטול רווח חיצוני */
+    padding: 0; /* ביטול רווח פנימי */
+    display: flex; /* תפריט אופקי */
+    gap: 15px; /* מרווח בין פריטי התפריט */
+}
+
+header nav ul li a {
+    color: white; /* צבע טקסט */
+    text-decoration: none; /* ביטול קו תחתון */
+    font-weight: bold; /* הדגשה */
+}
+
+/* אפקט hover על הקישורים בתפריט הניווט */
+header nav ul li a:hover {
+    color: #fff5cd;
+    font-size: 1.2em; /* מגדיל את הטקסט */
+    font-weight: bold; /* מדגיש את הטקסט */
+    transition: all 0.3s ease; /* אפקט מעבר חלק */
+}
+
+
+.left-section {
+    position: relative;
+    z-index: 1;
+}
+
+
+.left-section .side-logo {
+    width: 350px; /* גודל הלוגו */
+    height: auto; /* התאמה לגובה אוטומטית */
+}
+
+/*(logo-text) אנימציה ל-welcome */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%); /* מתחיל מחוץ למסך בצד שמאל */
+        opacity: 0; /* שקיפות מלאה */
+    }
+    to {
+        transform: translateX(0); /* מגיע למיקום הסופי */
+        opacity: 1; /* אטום לחלוטין */
+    }
+}
+
+/* טקסט הכותרת הראשית */
+.logo-text {
+    position: relative; /* מיקום יחסי */
+    display: flex; /* שימוש ב-Flexbox */
+    flex-direction: column; /* תוכן אנכי */
+    align-items: flex-start; /* שמירה על יישור לשמאל */
+    gap: 10px; /* רווח בין האלמנטים */
+    margin-left: 50px; /* רווח מהקצה השמאלי */
+    margin-top: 100px; /* הוספת רווח מלמעלה */
+    color: #000000; /* צבע שחור */
+    animation: slideInFromLeft 1s ease-out; /* מפעיל את האנימציה */
+}
+
+.logo-text h1 {
+    font-size: 50px; /* גודל כותרת */
+    margin: 0; /* ביטול רווח חיצוני */
+}
+
+.logo-text p {
+    font-size: 18px; /* גודל טקסט של הפסקה */
+    margin: 5px 0 0; /* רווח מעל */
+}
+
+
+/* עיצוב כפתור "Let's Cook!" */
+.buttonCook {
+    display: inline-block;
+    margin: -80px 0 0 140px; /* מיקום הכפתור */
+    padding: 10px 15px;
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer; /* הופך את הכפתור ללחיץ */
+}
+
+
+.buttonCook:hover {
+    background-color: #d65b1f; /* חמרה כהה יותר */
+    transform: scale(1.1); /* הגדלה בעת ריחוף */
+    text-decoration: none; /* שמירה על היעדר קו תחתון */
+}
+
+
+/* סרגל ימני עם שתי עמודות */
+.right-sidebar {
+    position: fixed; /* מיקום קבוע */
+    top: 100px; /* מרווח מהחלק העליון */
+    right: 20px; /* מרווח מהצד הימני */
+    display: flex; /* שימוש ב-Flexbox */
+    gap: 20px; /* רווח בין הטורים */
+}
+
+.image-column {
+    display: flex; /* שימוש ב-Flexbox */
+    flex-direction: column; /* סידור אנכי */
+    gap: 15px; /* רווח בין תמונות */
+}
+
+.sidebar-image {
+    width: 120px; /* גודל רוחב התמונה */
+    height: 120px; /* גובה התמונה */
+    object-fit: cover; /* התאמת התמונה לגודל */
+    background-color: white; /* מסגרת לבנה */
+    border-radius: 8px; /* פינות מעוגלות */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה */
+}
+
+/* כוכבים בעמוד */
+.star {
+    display: block; /* הצגת הכוכב */
+    margin-top: 10px; /* רווח בין הכוכבים לטקסט */
+}
+
+.small-star {
+    width: 30px; /* גודל קטן */
+    height: auto;
+}
+
+.large-star {
+    width: 50px; /* גודל גדול */
+    height: auto;
+}
+
+.top-right-star {
+    position: absolute; /* מיקום יחסי לתיבה */
+    top: -30px; /* הזזה למעלה */
+    right: 500px; /* הזזה ימינה */
+    width: 50px; /* גודל הכוכב */
+    height: auto;
+}
+
+/* עיצוב סרגל תמונות אלכסוני */
+.diagonal-sidebar {
+    position: fixed; /* מיקום קבוע */
+    top: 80px; /* מרווח מהחלק העליון */
+    right: 20px; /* מרווח מהקצה הימני */
+    display: flex; /* שימוש ב-Flexbox */
+    flex-direction: column; /* סידור אנכי */
+    align-items: flex-end; /* יישור לימין */
+    gap: 15px; /* רווח בין התמונות */
+    transform: rotate(-5deg); /* יצירת אפקט אלכסוני */
+}
+
+.diagonal-sidebar.second-sidebar {
+    right: 200px; /* הזזה שמאלה לעומת הסרגל הראשון */
+}
+
+.diagonal-image {
+    width: 140px; /* גודל התמונות */
+    height: auto;
+    object-fit: cover; /* התאמת התמונה */
+    background-color: white; /* מסגרת לבנה */
+    padding: 5px; /* רווח פנימי למסגרת */
+    border-radius: 10px; /* פינות מעוגלות */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה */
+    transition: transform 0.3s ease; /* אנימציה חלקה */
+}
+/* אפקט שקיפות לעמודים */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.greeting-text {
+    font-size: 18px;
+    color: #a44a14; /* צבע חמרה */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px; /* רווח מתחת לטקסט */
+    animation: fadeIn 1s ease-in-out; /* אנימציה לכניסה חלקה */
+}
+
+/* אנימציית fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Footer */
+footer {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-color: #a44a14; /* צבע חמרה */
+    color: white; /* צבע טקסט */
+    text-align: center; /* יישור למרכז */
+    padding: 10px; /* ריווח פנימי */
+    width: 100%; /* רוחב מלא */
+}

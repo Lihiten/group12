@@ -1,0 +1,173 @@
+/* רקע כללי */
+body {
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff5cd; /* רקע שמנת */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* דוחף את ה-footer לתחתית העמוד */
+    min-height: 100vh; /* גובה מינימלי של המסך */
+}
+
+/* Header */
+header {
+    background-color: #a44a14; /* חמרה */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    height: 60px; /* גובה הלוגו */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #fff5cd; /* צבע חמרה בהיר */
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Login Container */
+.login-container {
+    background-color: white;
+    border: 3px solid #a44a14; /* חמרה */
+    border-radius: 30px; /* פינות מעוגלות */
+    max-width: 400px;
+    padding: 20px;
+    margin: 50px auto; /* מיקום מרכזי */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* הצללה */
+    width: 90%;
+}
+
+/* כותרת לוגין */
+.login-header h2 {
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: -20px -20px 20px -20px; /* ביטול רווח פנימי ותחתון */
+    border-radius: 20px 20px 0 0; /* פינות מעוגלות עליונות */
+    position: relative; /* מאפשר מיקום יחסי לתמונה */
+    font-size: 20px; /* הקטנת גודל הכותרת */
+    font-weight: bold;
+}
+
+/* עיצוב הקונטיינר של הכותרת */
+.login-header {
+    position: relative; /* מאפשר מיקום יחסי לתמונה */
+    text-align: center; /* ממרכז את הטקסט */
+    color: #a44a14; /* צבע חמרה */
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-size: 20px; /* גודל הכותרת */
+    font-weight: bold; /* הדגשת הכותרת */
+}
+
+/* עיצוב האייקון */
+.login-header .login-icon {
+    position: absolute; /* מאפשר למקם את האייקון יחסית לכותרת */
+    top: 50%; /* מיקום אנכי */
+    right: 140px; /* הזזה שמאלה יחסית לכותרת */
+    transform: translateY(-50%); /* ממרכז את האייקון אנכית לכותרת */
+    width: 20px; /* גודל האייקון */
+    height: auto; /* שמירת פרופורציות */
+}
+
+
+
+
+/* טופס לוגין */
+.login-form label {
+    display: block;
+    color: #a44a14; /* חמרה */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #a44a14;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.login-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #d65b1f; /* חמרה כהה יותר */
+}
+
+/* קישור למשתמש חדש */
+.new-user {
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+}
+
+.new-user a {
+    color: #a44a14; /* חמרה */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.new-user a:hover {
+    text-decoration: underline;
+}
+
+/* אפקט שקיפות לעמודים */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto; /* מבטיח שה-footer יוצמד לתחתית */
+}
+
+

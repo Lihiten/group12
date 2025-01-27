@@ -1,0 +1,143 @@
+/* רקע כללי */
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff5cd; /* רקע שמנת */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* גובה מינימלי של המסך */
+}
+
+/* Main Content */
+main {
+    flex: 1; /* גורם לתוכן המרכזי לדחוף את ה-footer */
+}
+
+/* Header */
+header {
+    background-color: #a44a14; /* חמרה */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* אפקט hover על הקישורים בתפריט הניווט */
+header nav ul li a:hover {
+    color: #fff5cd;
+    font-size: 1.2em; /* מגדיל את הטקסט */
+    font-weight: bold; /* מדגיש את הטקסט */
+    transition: all 0.3s ease; /* אפקט מעבר חלק */
+}
+
+/* עיצוב קונטיינר הסינאפ */
+.signup-form {
+    background-color: white;
+    border: 2px solid #a44a14; /* חמרה */
+    border-radius: 20px; /* פינות מעוגלות */
+    max-width: 400px;
+    margin: 50px auto; /* ריווח אוטומטי */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* הצללה */
+    text-align: center; /* מרכז את הטקסט */
+}
+
+/* כותרת */
+.signup-form h2 {
+    color: #a44a14; /* חמרה */
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* עיצוב השדות */
+.signup-form form label {
+    display: block;
+    color: #a44a14; /* חמרה */
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left; /* יישור לשמאל */
+}
+
+.signup-form form input {
+    width: calc(100% - 20px); /* ריווח פנימי */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #a44a14; /* חמרה */
+    border-radius: 10px; /* פינות מעוגלות */
+    font-size: 16px;
+    outline: none; /* ביטול קו מסגרת */
+}
+
+/* כפתור */
+.signup-form .button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px; /* פינות מעוגלות */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-form .button:hover {
+    background-color: #d65b1f; /* חמרה כהה יותר */
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none; /* מוסתר כברירת מחדל */
+}
+
+input.error {
+    border: 2px solid red; /* גבול אדום לשדה עם שגיאה */
+}
+
+
+/* אפקט שקיפות לעמודים */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cook Master - Sign Up</title>
+    <link rel="stylesheet" href="../CSS/signup.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="../images/logo.jpg" alt="Cook Master Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index/templates/index.html">Home</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="../../login/templates/login.html">Login</a></li>
+                <li><a href="../../contact/templates/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sign Up Form -->
+    <main>
+        <div class="signup-form">
+            <h2>Sign Up</h2>
+            <form onsubmit="saveUserName(); return false;">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required>
+                <span class="error-message"></span>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message"></span>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error-message"></span>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="1" required>
+                <span class="error-message"></span>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="error-message"></span>
+
+                <button type="submit" class="button">Be A Master!</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../JS/signup.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Cook Master. All rights reserved.</p>
+    </footer>
+</body>
+</html>
