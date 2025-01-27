@@ -17,6 +17,7 @@ from part3.pages.contact.contact import contact_bp
 app.register_blueprint(contact_bp, url_prefix='/contact')
 
 
+
 ## login
 from part3.pages.login.login import login_bp
 app.register_blueprint(login_bp)
@@ -53,9 +54,10 @@ from part3.components.main_menu.main_menu import main_menu
 
 app.register_blueprint(main_menu)
 
+app.config["MONGO_URI"] = "mongodb+srv://lihiten:Lihi123ten99@cluster0.t7874.mongodb.net/web_project?retryWrites=true&w=majority"
+mongo = PyMongo(app)
+db = mongo.db
+
 if __name__ == "__main__":
     app.run(debug=True)
 
-mongo = PyMongo(app)
-app.config["MONGO_URI"] = "mongodb+srv://lihiten:Lihi123ten99@cluster0.t7874.mongodb.net/web_project?retryWrites=true&w=majority"
-db = mongo.db
