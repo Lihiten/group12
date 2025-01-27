@@ -20,7 +20,7 @@ app.register_blueprint(contact_bp, url_prefix='/contact')
 
 ## login
 from part3.pages.login.login import login_bp
-app.register_blueprint(login_bp)
+app.register_blueprint(login_bp, url_prefix="/login")
 
 
 ## signup
