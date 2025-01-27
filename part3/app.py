@@ -1,4 +1,7 @@
 from flask import Flask
+from flask_pymongo import PyMongo
+
+
 
 ###### App setup
 app = Flask(__name__)
@@ -10,14 +13,14 @@ from part3.pages.index.index import index_bp
 app.register_blueprint(index_bp, url_prefix="/")
 
 ## contact
-from part3.pages.contact.contact import contact
+from part3.pages.contact.contact import contact_bp
+app.register_blueprint(contact_bp, url_prefix='/contact')
 
-app.register_blueprint(contact)
 
 ## login
-from part3.pages.login.login import login
+from part3.pages.login.login import login_bp
+app.register_blueprint(login_bp)
 
-app.register_blueprint(login)
 
 ## signup
 from part3.pages.signup.signup import signup_bp
@@ -52,3 +55,7 @@ app.register_blueprint(main_menu)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+mongo = PyMongo(app)
+app.config["MONGO_URI"] = "mongodb+srv://lihiten:Lihi123ten99@cluster0.t7874.mongodb.net/web_project?retryWrites=true&w=majority"
+db = mongo.db

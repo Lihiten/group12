@@ -1,17 +1,7 @@
-from flask import render_template
-from flask import Blueprint
+from flask import Blueprint, render_template
 
-# contact blueprint definition
-contact = Blueprint(
-    'contact',
-    __name__,
-    static_folder='static',
-    static_url_path='/contact',
-    template_folder='templates'
-)
+contact_bp = Blueprint('contact', __name__, template_folder='templates', static_folder='static')
 
-
-# Routes
-@contact.route('/contact')
-def index():
+@contact_bp.route('/')
+def contact():
     return render_template('contact.html')
