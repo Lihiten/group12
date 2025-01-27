@@ -30,14 +30,11 @@ app.register_blueprint(signup_bp, url_prefix="/signup")
 
 ## workshops
 from part3.pages.workshops.workshops import workshops_bp
+app.register_blueprint(workshops_bp, url_prefix="/workshops")
 
-app.register_blueprint(workshops_bp)
-
-
-
-## workshop_details
+## workshop-details
 from part3.pages.workshop_details.workshop_details import workshop_details
-app.register_blueprint(workshop_details)
+app.register_blueprint(workshop_details, url_prefix='/workshop_details')
 
 
 ## Page error handlers

@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cook Master - Workshops</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/workshops.css') }}">
+   <link rel="stylesheet" href="{{ url_for('workshops.static', filename='CSS/workshops.css') }}">
+
+
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Cook Master Logo">
+           <img src="{{ url_for('static', filename='media/img/logo.jpg') }}" alt="Logo">
         </div>
         <nav>
             <ul>
                 <li><a href="{{ url_for('index.homepage') }}">Home</a></li>
-                <li><a href="{{ url_for('workshops.workshops') }}">Workshops</a></li>
+               <li><a href="{{ url_for('workshops.workshops_page') }}">Workshops</a></li>
                 <li><a href="{{ url_for('signup.signup') }}">Sign Up</a></li>
                 <li><a href="{{ url_for('login.login') }}">Login</a></li>
                 <li><a href="{{ url_for('contact.contact') }}">Contact</a></li>
@@ -29,50 +31,50 @@
         <div class="workshops-container">
             <!-- Italian Workshop -->
             <div class="workshop-card">
-                <img src="{{ url_for('static', filename='images/italian.jpg') }}" alt="Italian Cooking">
+                <img src="{{ url_for('static', filename='media/img/italian.jpg') }}" alt="Italian Cooking">
                 <h2>Italian Cooking</h2>
                 <p>Learn pasta, risotto, and pizza making.</p>
-                <a href="{{ url_for('workshop_details.workshop_details', type='italian') }}" class="button">View Details</a>
+                <a href="{{ url_for('workshop_details.workshop_details_page', type='italian')  }}" class="button">View Details</a>
             </div>
 
             <!-- Asian Workshop -->
             <div class="workshop-card">
-                <img src="{{ url_for('static', filename='images/asian.jpg') }}" alt="Asian Cuisine">
+                <img src="{{ url_for('static', filename='media/img/asian.jpg') }}" alt="Asian Cuisine">
                 <h2>Asian Cuisine</h2>
                 <p>Discover sushi, ramen, and stir-fry dishes.</p>
-                <a href="{{ url_for('workshop_details.workshop_details', type='asian') }}" class="button">View Details</a>
+                <a href="{{ url_for('workshop_details.workshop_details_page', type='asian') }}" class="button">View Details</a>
             </div>
 
             <!-- Mexican Workshop -->
             <div class="workshop-card">
-                <img src="{{ url_for('static', filename='images/mexican.jpg') }}" alt="Mexican Fiesta">
+                <img src="{{ url_for('static', filename='media/img/mexican.jpg') }}" alt="Mexican Fiesta">
                 <h2>Mexican Fiesta</h2>
                 <p>Make vibrant tacos, enchiladas, and salsa.</p>
-                <a href="{{ url_for('workshop_details.workshop_details', type='mexican') }}" class="button">View Details</a>
+                <a href="{{ url_for('workshop_details.workshop_details_page', type='mexican') }}" class="button">View Details</a>
             </div>
 
             <!-- Vegan Workshop -->
             <div class="workshop-card">
-                <img src="{{ url_for('static', filename='images/vegan.jpg') }}" alt="Vegan Specialties">
+                <img src="{{ url_for('static', filename='media/img/vegan.jpg') }}" alt="Vegan Specialties">
                 <h2>Vegan Specialties</h2>
                 <p>Cook delicious and healthy plant-based meals.</p>
-                <a href="{{ url_for('workshop_details.workshop_details', type='vegan') }}" class="button">View Details</a>
+                <a href="{{ url_for('workshop_details.workshop_details_page', type='vegan') }}" class="button">View Details</a>
             </div>
 
             <!-- Meat Workshop -->
             <div class="workshop-card">
-                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Meat Mastery">
+                <img src="{{ url_for('static', filename='media/img/meat.jpg') }}" alt="Meat Mastery">
                 <h2>Meat Mastery</h2>
                 <p>Perfect your grilling and roasting skills.</p>
-                <a href="{{ url_for('workshop_details.workshop_details', type='meat') }}" class="button">View Details</a>
+                <a href="{{ url_for('workshop_details.workshop_details_page', type='meat') }}" class="button">View Details</a>
             </div>
 
             <!-- Indian Workshop -->
             <div class="workshop-card">
-                <img src="{{ url_for('static', filename='images/indian.jpg') }}" alt="Indian Cuisine">
+                <img src="{{ url_for('static', filename='media/img/indian.jpg') }}" alt="Indian Cuisine">
                 <h2>Indian Cuisine</h2>
                 <p>Discover the secrets of curries and naan bread.</p>
-                <a href="{{ url_for('workshop_details.workshop_details', type='indian') }}" class="button">View Details</a>
+                <a href="{{ url_for('workshop_details.workshop_details_page', type='indian') }}" class="button">View Details</a>
             </div>
         </div>
     </main>
