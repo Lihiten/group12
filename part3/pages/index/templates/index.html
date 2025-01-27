@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cook Master - Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <!-- קישור לקובץ ה-CSS -->
+    <link rel="stylesheet" href="{{ url_for('index.static', filename='css/index.css') }}">
 </head>
 <body>
-    <!-- Header -->
+    <!-- כותרת עליונה -->
     <header>
         <div class="logo">
-            <img src="{{ url_for('static', filename='media/img/logo.jpg') }}" alt="Cook Master Logo">
+            <!-- תמונת לוגו -->
+            <img src="{{ url_for('index.static', filename='media/img/logo.jpg') }}" alt="Cook Master Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="{{ url_for('home.home') }}">Home</a></li>
+                <li><a href="{{ url_for('index.homepage') }}">Home</a></li>
                 <li><a href="{{ url_for('workshops.workshops') }}">Workshops</a></li>
                 <li><a href="{{ url_for('signup.signup') }}">Sign Up</a></li>
                 <li><a href="{{ url_for('login.login') }}">Login</a></li>
@@ -23,19 +25,21 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- תוכן ראשי -->
     <main class="index-main">
         <div class="left-section">
             <div class="logo-text">
                 <h1>Welcome to Cook Master!</h1>
                 <p>Add some magic to your food.</p>
-                <img src="{{ url_for('static', filename='media/img/star.jpg') }}" alt="Star">
+                <!-- תמונת כוכב -->
+                <img src="{{ url_for('index.static', filename='media/img/star.jpg') }}" alt="Star">
             </div>
-            <a href="{{ url_for('workshops') }}" class="buttonCook">Let's Cook!</a>
+            <!-- כפתור מעבר לעמוד סדנאות -->
+            <a href="{{ url_for('workshops.workshops') }}" class="buttonCook">Let's Cook!</a>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- כותרת תחתונה -->
     <footer>
         <p>&copy; 2024 Cook Master. All rights reserved.</p>
     </footer>

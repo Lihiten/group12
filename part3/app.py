@@ -6,8 +6,8 @@ app.config.from_pyfile('settings.py')
 
 ###### Pages
 ## index
-from part3.pages.index.index import index
-app.register_blueprint(index)
+from part3.pages.index.index import index_bp
+app.register_blueprint(index_bp, url_prefix="/")
 
 ## contact
 from part3.pages.contact.contact import contact

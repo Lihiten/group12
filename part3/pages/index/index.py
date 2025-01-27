@@ -1,24 +1,19 @@
 from flask import Blueprint
-from flask import render_template, redirect, url_for
 
 
 # index blueprint definition
 from flask import Blueprint, render_template
 
-index = Blueprint(
-    'index',  # שם ה-blueprint
+# יצירת Blueprint בשם index
+index_bp = Blueprint(
+    'index',
     __name__,
-    static_folder='static',
-    template_folder='templates'
+    template_folder='templates',
+    static_folder='static'
 )
 
-@index.route('/')
-def index():
+
+
+@index_bp.route('/')
+def homepage():
     return render_template('index.html')
-
-
-@index.route('/homepage')
-@index.route('/home')
-def redirect_homepage():
-    # print('I am in /index route!')
-    return redirect(url_for('index.index'))
