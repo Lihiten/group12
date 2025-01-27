@@ -97,6 +97,13 @@ header nav ul li a:hover {
     margin: 5px 0 0; /* רווח מעל */
 }
 
+.logo-text img {
+    width: 100px; /* הגדרת רוחב התמונה */
+    height: auto; /* שמירה על היחסיות */
+    margin-left: -10px; /* מרווח שמאלה כדי להזיז את התמונה ימינה */
+    margin-top: 10px; /* רווח מעל התמונה */
+}
+
 
 /* עיצוב כפתור "Let's Cook!" */
 .buttonCook {
