@@ -20,14 +20,16 @@ from part3.pages.login.login import login
 app.register_blueprint(login)
 
 ## signup
-from part3.pages.signup.signup import signup
-app.register_blueprint(signup)
+from part3.pages.signup.signup import signup_bp
+app.register_blueprint(signup_bp, url_prefix="/signup")
 
 
 ## workshops
-from part3.pages.workshops.workshops import workshops
+from part3.pages.workshops.workshops import workshops_bp
 
-app.register_blueprint(workshops)
+app.register_blueprint(workshops_bp)
+
+
 
 ## workshop_details
 from part3.pages.workshop_details.workshop_details import workshop_details

@@ -1,12 +1,11 @@
 from flask import Blueprint, render_template
 
-signup = Blueprint(
-    'signup',  # שם ה-blueprint
-    __name__,
-    static_folder='static',
-    template_folder='templates'
-)
+signup_bp = Blueprint('signup'
+                      , __name__,
+                      template_folder='templates')
 
-@signup.route('/signup')
-def signup_page():
+
+@signup_bp.route('/signup', methods=['GET', 'POST'])
+def signup():
     return render_template('signup.html')
+
