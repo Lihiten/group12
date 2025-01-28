@@ -28,9 +28,9 @@
         <div class="login-container">
             <div class="login-header">
     <h2>Login <img src="{{ url_for('static', filename='media/img/sacum.jpg') }}" alt="Sacum Icon" class="login-icon"></h2>
-                {% with messages = get_flashed_messages(with_categories=true) %}
+{% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-        <ul class="flash-messages">
+        <ul class="flashes">
             {% for category, message in messages %}
                 <li class="{{ category }}">{{ message }}</li>
             {% endfor %}
@@ -38,16 +38,19 @@
     {% endif %}
 {% endwith %}
 
-</div>
 
-            <form class="login-form">
+            </div>
+
+            <form class="login-form" method="POST" action="{{ url_for('login.login') }}">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
 
                 <button type="submit">Be A Master!</button>
             </form>
+
             <p class="new-user">New Master? <a href="{{ url_for('signup.signup') }}">Start here</a></p>
         </div>
     </main>

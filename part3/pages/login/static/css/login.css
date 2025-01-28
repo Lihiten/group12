@@ -89,8 +89,6 @@ header nav ul li a:hover {
 }
 
 
-
-
 /* טופס לוגין */
 .login-form label {
     display: block;
@@ -158,6 +156,8 @@ body {
     }
 }
 
+
+
 /* Footer */
 footer {
     background-color: #a44a14; /* חמרה */
@@ -167,31 +167,27 @@ footer {
     width: 100%;
     margin-top: auto; /* מבטיח שה-footer יוצמד לתחתית */
 }
-
-/*הודעת שגיאה אם שם משתמש/סיסמא שגויים*/
-.flash-messages {
+/* עיצוב להודעות Flash */
+.flashes {
     list-style: none;
-    padding: 0;
+    padding: 10px;
+    margin: 10px 0;
     text-align: center;
 }
 
-.flash-messages li {
+.flashes li {
     padding: 10px;
-    margin: 10px auto;
     border-radius: 5px;
-    font-size: 16px;
     font-weight: bold;
-    width: 50%;
 }
 
-.flash-messages .success {
+/* צבעים שונים להודעות */
+.success {
     background-color: #4CAF50;
     color: white;
 }
 
-.flash-messages .error {
+.error {
     background-color: #FF5733;
     color: white;
 }
-
-
