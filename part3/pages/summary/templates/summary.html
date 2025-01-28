@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Summary</title>
-    <link rel="stylesheet" href="../CSS/summary.css">
-</head>
+        <link rel="stylesheet" href="{{ url_for('summary.static', filename='css/summary.css') }}"></head>
 <body>
     <header>
         <div class="logo">
@@ -14,7 +13,7 @@
         <nav>
             <ul>
                 <li><a href="{{ url_for('index.homepage') }}">Home</a></li>
-                <<li><a href="{{ url_for('workshops.workshops_page') }}">Workshops</a></li>
+                <li><a href="{{ url_for('workshops.workshops_page') }}">Workshops</a></li>
                 <li><a href="{{ url_for('signup.signup') }}">Sign Up</a></li>
                 <li><a href="{{ url_for('login.login') }}">Login</a></li>
                 <li><a href="{{ url_for('contact.contact') }}">Contact</a></li>
@@ -56,7 +55,7 @@
         });
     </script>
  <!-- חיבור קובץ ה-JavaScript -->
-    <script src="../JS/script.js"></script>
+    <script src="{{ url_for('summary.static', filename='js/summary.js') }}"></script>
 
 </body>
 </html>

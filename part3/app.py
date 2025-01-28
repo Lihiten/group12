@@ -36,6 +36,9 @@ app.register_blueprint(workshops_bp, url_prefix="/workshops")
 from part3.pages.workshop_details.workshop_details import workshop_details
 app.register_blueprint(workshop_details, url_prefix='/workshop_details')
 
+## summary
+from part3.pages.summary.summary import summary_bp
+app.register_blueprint(summary_bp, url_prefix='/summary')
 
 ## Page error handlers
 from part3.pages.page_error_handlers.page_error_handlers import page_error_handlers

@@ -80,14 +80,12 @@ header nav ul li a:hover {
     font-weight: bold; /* הדגשת הכותרת */
 }
 
-/* עיצוב האייקון */
+/* עיצוב תמונת האייקון */
 .login-header .login-icon {
-    position: absolute; /* מאפשר למקם את האייקון יחסית לכותרת */
-    top: 50%; /* מיקום אנכי */
-    right: 140px; /* הזזה שמאלה יחסית לכותרת */
-    transform: translateY(-50%); /* ממרכז את האייקון אנכית לכותרת */
-    width: 20px; /* גודל האייקון */
-    height: auto; /* שמירת פרופורציות */
+    width: 25px; /* גודל קטן יותר */
+    height: auto; /* שומר על יחס רוחב-גובה */
+    margin-left: 10px; /* יוצר רווח קטן בין ה-Login לתמונה */
+    vertical-align: middle; /* ממקם את התמונה באותה שורה עם הטקסט */
 }
 
 

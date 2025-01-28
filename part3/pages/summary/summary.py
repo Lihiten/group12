@@ -1,10 +1,9 @@
 from flask import Blueprint, render_template
 
-# summary blueprint definition
-catalog = Blueprint('summary', __name__, static_folder='static', static_url_path='/summary', template_folder='templates')
+# יצירת ה-Blueprint עם שם תואם
+summary_bp = Blueprint('summary', __name__, template_folder='templates', static_folder='static')
 
-
-# Routes
-@catalog.route('/catalog')
-def index():
+# הגדרת הנתיב לעמוד summary
+@summary_bp.route('/summary')
+def summary():
     return render_template('summary.html')

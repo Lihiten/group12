@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 <li><a href="{{ url_for('index.homepage') }}">Home</a></li>
-                <<li><a href="{{ url_for('workshops.workshops_page') }}">Workshops</a></li>
+                <li><a href="{{ url_for('workshops.workshops_page') }}">Workshops</a></li>
                 <li><a href="{{ url_for('signup.signup') }}">Sign Up</a></li>
                 <li><a href="{{ url_for('login.login') }}">Login</a></li>
                 <li><a href="{{ url_for('contact.contact') }}">Contact</a></li>
@@ -27,9 +27,9 @@
     <main>
         <div class="login-container">
             <div class="login-header">
-                <h2>Login</h2>
-                <img src="{{ url_for('static', filename='media/img/sacum.jpg') }}" alt="Cook Master Logo">
-            </div>
+    <h2>Login <img src="{{ url_for('static', filename='media/img/sacum.jpg') }}" alt="Sacum Icon" class="login-icon"></h2>
+</div>
+
             <form class="login-form">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -38,7 +38,7 @@
 
                 <button type="submit">Be A Master!</button>
             </form>
-            <p class="new-user">New Master? <a href="../../signup/templates/signup.html">Start here</a></p>
+            <p class="new-user">New Master? <a href="{{ url_for('signup.signup') }}">Start here</a></p>
         </div>
     </main>
 
@@ -47,6 +47,7 @@
         <p>&copy; 2024 Cook Master. All rights reserved.</p>
     </footer>
  <!-- חיבור קובץ ה-JavaScript -->
-    <script src="../JS/login.js"></script>
+    <script src="{{ url_for('login.static', filename='js/login.js') }}"></script>
+
 </body>
 </html>
