@@ -168,4 +168,30 @@ footer {
     margin-top: auto; /* מבטיח שה-footer יוצמד לתחתית */
 }
 
+/*הודעת שגיאה אם שם משתמש/סיסמא שגויים*/
+.flash-messages {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.flash-messages li {
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 50%;
+}
+
+.flash-messages .success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.flash-messages .error {
+    background-color: #FF5733;
+    color: white;
+}
+
 
