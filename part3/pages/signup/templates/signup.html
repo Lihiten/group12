@@ -27,29 +27,25 @@
     <main>
         <div class="signup-form">
             <h2>Sign Up</h2>
-            <form method="POST" action="{{ url_for('signup.signup') }}">
-                <label for="full-name">Full Name:</label>
-                <input type="text" id="full-name" name="full-name" required>
-                <span class="error-message"></span>
+        <form action="{{ url_for('signup.signup') }}" method="POST">
+    <label for="full-name">Full Name:</label>
+    <input type="text" id="full-name" name="full-name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <span class="error-message"></span>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <span class="error-message"></span>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
 
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" min="1" required>
-                <span class="error-message"></span>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="1" required>
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
-                <span class="error-message"></span>
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
 
-                <button type="submit" class="button">Be A Master!</button>
-            </form>
+    <button type="submit" class="button">Be A Master!</button>
+</form>
+
         </div>
     </main>
 

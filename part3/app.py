@@ -1,6 +1,17 @@
 from flask import Flask
 from flask_pymongo import PyMongo
+from pymongo import MongoClient
+from part3.settings import MONGO_URI, DATABASE_NAME
+from part3.settings import SECRET_KEY
 
+app = Flask(__name__)
+app.config['SECRET_KEY'] = SECRET_KEY
+
+
+# התחברות ל-MongoDB
+client = MongoClient(MONGO_URI)
+db = client[DATABASE_NAME]  # גישה למסד הנתונים
+customers_collection = db["customers"]  # גישה לאוסף customers
 
 
 ###### App setup
