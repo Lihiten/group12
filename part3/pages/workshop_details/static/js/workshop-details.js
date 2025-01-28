@@ -76,41 +76,95 @@ document.addEventListener("DOMContentLoaded", function () {
             </section>
         `;
 
-        // **NEW: Restrict date selection to today and two months ahead**
+        // Restrict date selection (today and two months ahead)
         const dateInput = document.getElementById("date");
         if (dateInput) {
             const today = new Date();
-            const minDate = today.toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+            const minDate = today.toISOString().split("T")[0];
             dateInput.setAttribute("min", minDate);
 
             const maxDate = new Date();
-            maxDate.setMonth(maxDate.getMonth() + 2); // Add 2 months
+            maxDate.setMonth(maxDate.getMonth() + 2);
             const maxDateStr = maxDate.toISOString().split("T")[0];
             dateInput.setAttribute("max", maxDateStr);
         }
 
-        // **NEW: Handle form submission and redirect to summary**
+        // Update available times when a date is selected
+        if (dateInput) {
+            dateInput.addEventListener("change", updateTimeOptions);
+        }
+
+        // Handle form submission
         const form = document.getElementById("registration-form");
         form.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent page refresh
-
-            // Get form values
+            event.preventDefault();
             const date = document.getElementById("date").value;
             const time = document.getElementById("time").value;
             const participants = document.getElementById("participants").value;
 
-            // Store data in URL parameters for summary page
-            const params = new URLSearchParams();
-            params.append("workshop", workshop.title);
-            params.append("date", date);
-            params.append("time", time);
-            params.append("participants", participants);
-
-            // Redirect to summary page
-            window.location.href = `/summary/?${params.toString()}`;
+            checkAvailability(workshop.title, date, time, participants);
         });
-
     } else {
         detailsContainer.innerHTML = `<h1>Workshop not found</h1>`;
     }
 });
+
+// Function to check if the workshop is fully booked
+function checkAvailability(workshop, date, time, participants) {
+   fetch("/workshop_details/check_availability", {  // שימי לב להוספה של '/workshop_details'
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ workshop, date, time })
+})
+
+    .then(response => response.json())
+    .then(data => {
+        if (!data.available) {
+            alert(data.message);
+        } else {
+            registerWorkshop(workshop, date, time, participants);
+        }
+    })
+    .catch(error => console.error("Error:", error));
+}
+
+// Function to register for the workshop
+function registerWorkshop(workshop, date, time, participants) {
+    fetch("/workshop_details/register_workshop", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ workshop, date, time, participants })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = `/summary?workshop=${encodeURIComponent(workshop)}&date=${date}&time=${time}&participants=${data.participants}`;
+        } else {
+            alert(data.message);
+        }
+    })
+    .catch(error => console.error("Error:", error));
+}
+
+// Function to update available time slots based on full bookings
+function updateTimeOptions() {
+    const timeSelect = document.getElementById("time");
+    const date = document.getElementById("date").value;
+    const workshop = document.querySelector(".workshop-header h1").textContent;
+
+    if (!date) return;
+
+   fetch("/workshop_details/get_fully_booked_times", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ workshop, date })
+    })
+    .then(response => response.json())
+    .then(data => {
+        Array.from(timeSelect.options).forEach(option => {
+            option.disabled = data.fullyBooked.includes(option.value);
+            option.style.color = option.disabled ? "gray" : "black";
+        });
+    })
+    .catch(error => console.error("Error:", error));
+}
