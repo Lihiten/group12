@@ -17,7 +17,7 @@
         <nav>
             <ul>
                 <li><a href="{{ url_for('index.homepage') }}">Home</a></li>
-                <li><a href="{{ url_for('workshops.workshops') }}">Workshops</a></li>
+                <li><a href="{{ url_for('workshops.workshops_page') }}">Workshops</a></li>
                 <li><a href="{{ url_for('signup.signup') }}">Sign Up</a></li>
                 <li><a href="{{ url_for('login.login') }}">Login</a></li>
                 <li><a href="{{ url_for('contact.contact') }}">Contact</a></li>
@@ -35,7 +35,7 @@
                     <img src="{{ url_for('static', filename='media/img/star.jpg') }}" alt="Star">
             </div>
             <!-- כפתור מעבר לעמוד סדנאות -->
-            <a href="{{ url_for('workshops.workshops') }}" class="buttonCook">Let's Cook!</a>
+            <a href="{{ url_for('workshops.workshops_page') }}" class="buttonCook">Let's Cook!</a>
         </div>
 
         <!-- סרגל תמונות -->
