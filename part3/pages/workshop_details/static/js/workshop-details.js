@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const params = new URLSearchParams(window.location.search);
-    const type = params.get("type");
+    // קבלת שם הסדנה מהנתיב (URL)
+    const pathSegments = window.location.pathname.split("/");
+    const type = pathSegments[pathSegments.length - 1]; // מקבל את הערך האחרון ב-URL
+
+    console.log("📢 Workshop Type:", type); // הדפסה לבדיקת הערך
 
     // תוכן לכל סדנה
     const workshops = {
@@ -15,36 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
             description: "Master the art of sushi, ramen, and stir-fry dishes!",
             menu: ["Sushi Rolls", "Ramen Noodles", "Stir-Fried Vegetables", "Miso Soup"],
             times: ["7:30 PM", "8:30 PM", "9:30 PM"]
-        },
-        mexican: {
-            title: "Mexican Fiesta Workshop",
-            description: "Learn to make tacos, enchiladas, and fresh salsa!",
-            menu: ["Tacos", "Enchiladas", "Fresh Guacamole", "Churros"],
-            times: ["7:30 PM", "8:30 PM", "9:30 PM"]
-        },
-        vegan: {
-            title: "Vegan Specialties Workshop",
-            description: "Create delicious plant-based dishes!",
-            menu: ["Vegan Burgers", "Quinoa Salad", "Vegan Brownies", "Smoothie Bowls"],
-            times: ["7:30 PM", "8:30 PM", "9:30 PM"]
-        },
-        meat: {
-            title: "Meat Mastery Workshop",
-            description: "Perfect your grilling and roasting skills!",
-            menu: ["BBQ Ribs", "Steak", "Roast Chicken", "Pulled Pork"],
-            times: ["7:30 PM", "8:30 PM", "9:30 PM"]
-        },
-        indian: {
-            title: "Indian Cuisine Workshop",
-            description: "Learn the secrets of curries and naan bread!",
-            menu: ["Butter Chicken", "Naan Bread", "Vegetable Curry", "Gulab Jamun"],
-            times: ["7:30 PM", "8:30 PM", "9:30 PM"]
         }
+        // הוסיפי כאן את שאר הסדנאות
     };
 
     // מציאת המידע על הסדנה שנבחרה
     const workshop = workshops[type];
-    const detailsContainer = document.getElementById("workshop_details");
+    const detailsContainer = document.getElementById("workshop-details");
 
     if (workshop) {
         detailsContainer.innerHTML = `
@@ -72,37 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </form>
             </section>
         `;
-
-        // הגבלת תאריכים
-        const dateInput = document.getElementById("date");
-        if (dateInput) {
-            const today = new Date();
-            const minDate = today.toISOString().split("T")[0]; // תאריך מינימלי
-            dateInput.setAttribute("min", minDate);
-
-            const maxDate = new Date();
-            maxDate.setMonth(maxDate.getMonth() + 2); // חודשיים קדימה
-            const maxDateStr = maxDate.toISOString().split("T")[0]; // תאריך מקסימלי
-            dateInput.setAttribute("max", maxDateStr);
-        }
-
-        // מאזין לטופס
-        const form = document.getElementById("registration-form");
-        if (form) {
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
-                const params = new URLSearchParams();
-
-                params.append("date", document.getElementById("date").value);
-                params.append("time", document.getElementById("time").value);
-                params.append("participants", document.getElementById("participants").value);
-                params.append("workshop", workshop.title);
-
-                window.location.href = `summary.html?${params.toString()}`;
-            });
-        }
     } else {
         detailsContainer.innerHTML = `<h1>Workshop not found</h1>`;
     }
 });
-

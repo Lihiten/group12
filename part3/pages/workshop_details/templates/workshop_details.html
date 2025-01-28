@@ -18,7 +18,7 @@
     <ul>
         <li><a href="{{ url_for('index.homepage') }}">Home</a></li>
         <li><a href="{{ url_for('workshops.workshops_page') }}">Workshops</a></li>
-        <li><a href="{{ url_for('signup.signup_page') }}">Sign Up</a></li>
+        <li><a href="{{ url_for('signup.signup') }}">Sign Up</a></li>
         <li><a href="{{ url_for('login.login') }}">Login</a></li>
         <li><a href="{{ url_for('contact.contact') }}">Contact</a></li>
     </ul>
@@ -39,7 +39,11 @@
     </footer>
 
  <!-- חיבור קובץ ה-JavaScript -->
-    <script src="{{ url_for('workshop_details.static', filename='JS/workshop-details.js') }}"></script>
+<script>
+    const workshopType = "{{ type }}";
+</script>
+<script src="{{ url_for('workshop_details.static', filename='JS/workshop-details.js') }}"></script>
+
 
 
 </body>
