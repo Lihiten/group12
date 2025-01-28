@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
             params.append("participants", participants);
 
             // Redirect to summary page
-            window.location.href = `/summary?${params.toString()}`;
+            window.location.href = `/summary/?${params.toString()}`;
         });
 
     } else {
