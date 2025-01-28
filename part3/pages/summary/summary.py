@@ -1,9 +1,12 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 
-# יצירת ה-Blueprint עם שם תואם
-summary_bp = Blueprint('summary', __name__, template_folder='templates', static_folder='static')
+summary_bp = Blueprint('summary', __name__, static_folder='static', template_folder='templates')
 
-# הגדרת הנתיב לעמוד summary
-@summary_bp.route('/summary')
+@summary_bp.route('/summary', methods=['GET'])
 def summary():
-    return render_template('summary.html')
+    name = request.args.get('name')
+    email = request.args.get('email')
+    age = request.args.get('age')
+    phone = request.args.get('phone')
+
+    return render_template('summary.html', name=name, email=email, age=age, phone=phone)

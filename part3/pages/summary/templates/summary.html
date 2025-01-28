@@ -8,7 +8,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="../images/logo.jpg" alt="Cook Master Logo">
+            <img src="{{ url_for('static', filename='media/img/logo.jpg') }}" alt="Cook Master Logo">
         </div>
         <nav>
             <ul>
@@ -26,7 +26,12 @@
     <!-- Main Content -->
     <main>
         <h1>Your first step to become a chef is done!</h1>
-        <section id="summary-details" class="summary-section"></section>
+    <section id="summary-details" class="summary-section">
+        <p><strong>Full Name:</strong> {{ name }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Age:</strong> {{ age }}</p>
+        <p><strong>Phone Number:</strong> {{ phone }}</p>
+    </section>
     </main>
 
     <!-- Footer -->

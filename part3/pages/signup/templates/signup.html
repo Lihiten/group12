@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cook Master - Sign Up</title>
-        <link rel="stylesheet" href="{{ url_for('signup.static', filename='css/signup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('signup.static', filename='css/signup.css') }}">
 </head>
 <body>
     <!-- Header -->
@@ -27,7 +27,7 @@
     <main>
         <div class="signup-form">
             <h2>Sign Up</h2>
-            <form onsubmit="saveUserName(); return false;">
+            <form method="POST" action="{{ url_for('signup.signup') }}">
                 <label for="full-name">Full Name:</label>
                 <input type="text" id="full-name" name="full-name" required>
                 <span class="error-message"></span>
@@ -54,11 +54,10 @@
     </main>
 
     <!-- JavaScript -->
-        <script src="{{ url_for('signup.static', filename='js/signup.js') }}"></script>
+    <script src="{{ url_for('signup.static', filename='js/signup.js') }}"></script>
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Cook Master. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
