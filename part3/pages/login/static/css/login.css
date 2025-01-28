@@ -1,6 +1,6 @@
 /* רקע כללי */
 body {
-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff5cd; /* רקע שמנת */
@@ -72,33 +72,39 @@ header nav ul li a:hover {
 
 /* עיצוב הקונטיינר של הכותרת */
 .login-header {
-    position: relative; /* מאפשר מיקום יחסי לתמונה */
-    text-align: center; /* ממרכז את הטקסט */
+    position: relative;
+    text-align: center;
     color: #a44a14; /* צבע חמרה */
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-    font-size: 20px; /* גודל הכותרת */
-    font-weight: bold; /* הדגשת הכותרת */
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* עיצוב תמונת האייקון */
 .login-header .login-icon {
-    width: 25px; /* גודל קטן יותר */
-    height: auto; /* שומר על יחס רוחב-גובה */
-    margin-left: 10px; /* יוצר רווח קטן בין ה-Login לתמונה */
-    vertical-align: middle; /* ממקם את התמונה באותה שורה עם הטקסט */
+    width: 25px;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
-
 /* טופס לוגין */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .login-form label {
-    display: block;
-    color: #a44a14; /* חמרה */
+    align-self: flex-start;
     font-weight: bold;
+    color: #a44a14; /* חמרה */
     margin-bottom: 5px;
 }
 
 .login-form input {
-    width: calc(100% - 20px);
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #a44a14;
@@ -107,11 +113,11 @@ header nav ul li a:hover {
     outline: none;
 }
 
+/* כפתור הלוגין */
 .login-form button {
-    display: block;
     width: 100%;
-    padding: 10px;
-    background-color: #a44a14; /* חמרה */
+    padding: 12px;
+    background-color: #a44a14;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -119,10 +125,11 @@ header nav ul li a:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 .login-form button:hover {
-    background-color: #d65b1f; /* חמרה כהה יותר */
+    background-color: #d65b1f;
 }
 
 /* קישור למשתמש חדש */
@@ -142,31 +149,6 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* אפקט שקיפות לעמודים */
-body {
-    animation: fadeIn 0.8s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-
-/* Footer */
-footer {
-    background-color: #a44a14; /* חמרה */
-    color: white;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    margin-top: auto; /* מבטיח שה-footer יוצמד לתחתית */
-}
 /* עיצוב להודעות Flash */
 .flashes {
     list-style: none;
@@ -190,4 +172,28 @@ footer {
 .error {
     background-color: #FF5733;
     color: white;
+}
+
+/* אפקט שקיפות לעמודים */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #a44a14; /* חמרה */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto; /* מבטיח שה-footer יוצמד לתחתית */
 }
