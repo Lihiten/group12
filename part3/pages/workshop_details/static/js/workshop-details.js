@@ -168,3 +168,38 @@ function updateTimeOptions() {
     })
     .catch(error => console.error("Error:", error));
 }
+
+// בדיקה אם המשתמש מחובר לפני הרשמה
+function checkLoginStatus(callback) {
+    fetch("/auth/check_login_status")
+        .then(response => response.json())
+        .then(data => {
+            if (!data.logged_in) {
+                alert("You must be logged in to register for a workshop!");
+                window.location.href = "/login/login"; // מפנה להתחברות
+            } else {
+                callback(data.user);
+            }
+        })
+        .catch(error => console.error("Error:", error));
+}
+
+// פונקציה להרשמה לסדנא
+function registerWorkshop(workshop, date, time, participants) {
+    checkLoginStatus(function(userEmail) {
+        fetch("/workshop_details/register_workshop", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ workshop, date, time, participants, user_email: userEmail })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = `/summary?workshop=${encodeURIComponent(workshop)}&date=${date}&time=${time}&participants=${data.participants}`;
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+}
