@@ -43,3 +43,27 @@ def insert_user(user_data):
     db = connect_to_db()
     users = db["users"]
     users.insert_one(user_data)
+
+    db.workshop_registrations.update_many(
+        {},  # בוחר את כל המסמכים
+        {"$set": {"available_spots": 10}}  # מוסיף שדה עם ערך ברירת מחדל
+    )
+
+    def update_available_spots(workshop_id):
+        """
+        מעדכן את מספר המקומות הפנויים בסדנה לאחר רישום משתתף
+        """
+        db = connect_to_db()
+        workshops = db["workshop_registrations"]
+
+        # חיפוש הסדנה ובדיקת מספר המקומות הפנויים
+        workshop = workshops.find_one({"_id": workshop_id})
+
+        if workshop and workshop.get("available_spots", 0) > 0:
+            workshops.update_one(
+                {"_id": workshop_id},
+                {"$inc": {"available_spots": -1}}
+            )
+            return True
+        return False  # אם אין מקומות פנויים, לא לבצע עדכון
+

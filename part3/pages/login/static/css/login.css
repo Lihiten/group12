@@ -74,6 +74,7 @@ header nav ul li a:hover {
 .login-header {
     position: relative;
     text-align: center;
+    width: 100%;
     color: #a44a14; /* צבע חמרה */
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     font-size: 20px;
@@ -89,32 +90,34 @@ header nav ul li a:hover {
 }
 
 /* טופס לוגין */
-.login-form {
+.login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.login-form label {
+.login-container label {
     align-self: flex-start;
     font-weight: bold;
     color: #a44a14; /* חמרה */
     margin-bottom: 5px;
 }
 
-.login-form input {
+.login-container input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid #a44a14;
     border-radius: 5px;
     font-size: 16px;
     outline: none;
+    margin: 5px auto 15px auto; /* ממקם את השדות במרכז */
+    display: block; /* מבטיח שהשדה יתנהג כבלוק ויהיה אפשר למרכז */
+    text-align: left; /* מבטיח שהטקסט עצמו יתחיל משמאל */
 }
 
 /* כפתור הלוגין */
-.login-form button {
+.login-container button {
     width: 100%;
     padding: 12px;
     background-color: #a44a14;
@@ -128,7 +131,7 @@ header nav ul li a:hover {
     margin-top: 10px;
 }
 
-.login-form button:hover {
+.login-container button:hover {
     background-color: #d65b1f;
 }
 
